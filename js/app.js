@@ -1,0 +1,1 @@
+var transmedia = angular.module('transmedia', ['ngAnimate']);

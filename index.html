@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="transmedia">
 <head>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
   <meta charset="utf-8">
@@ -11,24 +11,21 @@
 
   <script src="js/app.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/controllers.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
   <script>
-  $(document).ready(function() {
+/*  $(document).ready(function() {
   
-  /* fix vertical when not overflow
-  call fullscreenFix() if .fullscreen content changes */
+
   function fullscreenFix(){
       var h = $('body').height();
       // set .fullscreen height
-/*      $(".content-b").each(function(i){
-          if($(this).innerHeight() > h){ $(this).closest(".fullscreen").addClass("overflow");
-          }
-      });*/
   }
   $(window).resize(fullscreenFix);
   fullscreenFix();
 
-  /* resize background images */
   function backgroundResize(){
       var windowH = $(window).height();
       $(".background").each(function(i){
@@ -84,7 +81,7 @@ function load_image()
    // load the image
    my_image.src = 'bigearth.jpg';
 }
-  });
+  });*/
 	</script>
 	
 	<style>
@@ -115,31 +112,28 @@ function load_image()
   
 </head>
   
-<body ng-app="transmedia">
+<body ng-controller="mainCtrl">
 
-<div style="z-index :100; float:left; position: relative;">
-Click me: <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><br/>
+<div style="z-index :100; float:left; position: absolute; top: 50%; left: 10px; font-size: 32px;">
+    <a href="#" ng-click="changePosition(-1, 0);"><span class="glyphicon glyphicon-chevron-left">&nbsp;</span></a>
+</div>
+<div style="z-index :100; float:right; position: absolute; top: 50%; right: 10px; font-size: 32px;">
+    <a href="#" ng-click="changePosition(1, 0);"><span class="glyphicon glyphicon-chevron-right">&nbsp;</span></a>
+</div>
+<div style="z-index :100; float:left; position: absolute; top: 10px; left: 50%; font-size: 32px;">
+    <a href="#" ng-click="changePosition(0, -1);"><span class="glyphicon glyphicon-chevron-up">&nbsp;</span></a>
+</div>
+<div style="z-index :100; float:left; position: absolute; bottom: 10px; left: 50%; font-size: 32px;">
+    <a href="#" ng-click="changePosition(0, 1);"><span class="glyphicon glyphicon-chevron-down">&nbsp;</span></a>
 </div>
 
-<div ng-hide="checked" class="fullscreen card-show" position="prueba1">
-<div class="fullscreen background" style="background-image:url('http://www.minimit.com/images/picjumbo.com_IMG_6648.jpg');" data-img-width="1600" data-img-height="1064">
-    <div class="content-a">
-        <div class="content-b">
+<div ng-repeat="card in cards" ng-show="card.pos_x==current_x && card.pos_y==current_y" class="fullscreen card-show" position-x="{{card.pos_x}}" position-y="{{card.pos_y}}">
+    <div class="fullscreen background" style="background-image:url('{{card.default_img}}');" data-img-width="1600" data-img-height="1064">
+        <div class="content">
             Centered content
         </div>
     </div>
 </div>
-</div>
 
-<div ng-show="checked" class="fullscreen card-show" position="prueba2">
-<div class="fullscreen background" style="background-image:url('img/monsoon-1.jpg');" data-img-width="1600" data-img-height="1064">
-    <div class="content-a">
-        <div class="content-b">
-            Centered content
-        </div>
-    </div>
-</div>
-</div>
-  
 </body>
 </html>

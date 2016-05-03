@@ -1,0 +1,67 @@
+[
+    {
+        "pos_x": 0,
+        "pos_y": 0,
+        "default_img": "http://cdn1.buuteeq.com/upload/21845/city-1.jpg.1920x1080_default.jpg",
+        "cards": [
+            {
+                "depth": 0,
+                "media": 0,
+                "type": 0
+            }
+        ]
+        
+    },
+    {
+        "pos_x": 0,
+        "pos_y": -1,
+        "default_img": "http://www.fondos7.net/wallpaper-original/wallpapers/muelle-chile-3737.jpg",
+        "cards": [
+            {
+                "depth": 0,
+                "media": 0,
+                "type": 0
+            }
+        ]
+        
+    },
+    {
+        "pos_x": 0,
+        "pos_y": 1,
+        "default_img": "http://wallpaperstock.net/wallpapers/thumbs1/49313hd.jpg",
+        "cards": [
+            {
+                "depth": 0,
+                "media": 0,
+                "type": 0
+            }
+        ]
+        
+    },
+    {
+        "pos_x": -1,
+        "pos_y": 0,
+        "default_img": "http://drwallpaper.com/wp-content/uploads/2016/03/chile_wallpaper_hd_background_download_desktop8.jpg",
+        "cards": [
+            {
+                "depth": 0,
+                "media": 0,
+                "type": 0
+            }
+        ]
+        
+    },
+    {
+        "pos_x": 1,
+        "pos_y": 0,
+        "default_img": "http://www.minimit.com/images/picjumbo.com_IMG_6648.jpg",
+        "cards": [
+            {
+                "depth": 0,
+                "media": 0,
+                "type": 0
+            }
+        ]
+        
+    }
+]

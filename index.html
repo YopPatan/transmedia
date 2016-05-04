@@ -2,114 +2,43 @@
 <html ng-app="transmedia">
 <head>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <meta charset="utf-8">
-  <title>Fullscreen backgrounds with centered content</title>
-  <meta name="description" content="Fullscreen backgrounds with centered content">
-  
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+<meta charset="utf-8">
+<title>Fullscreen backgrounds with centered content</title>
+<meta name="description" content="Fullscreen backgrounds with centered content">
 
-  <script src="js/app.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/controllers.js"></script>
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
 
-  <script>
-/*  $(document).ready(function() {
-  
+<script src="js/app.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/controllers.js"></script>
 
-  function fullscreenFix(){
-      var h = $('body').height();
-      // set .fullscreen height
-  }
-  $(window).resize(fullscreenFix);
-  fullscreenFix();
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-  function backgroundResize(){
-      var windowH = $(window).height();
-      $(".background").each(function(i){
-          var path = $(this);
-          // variables
-          var contW = path.width();
-          var contH = path.height();
-          var imgW = path.attr("data-img-width");
-          var imgH = path.attr("data-img-height");
-          var ratio = imgW / imgH;
-          // overflowing difference
-          var diff = parseFloat(path.attr("data-diff"));
-          diff = diff ? diff : 0;
-          // remaining height to have fullscreen image only on parallax
-          var remainingH = 0;
-          if(path.hasClass("parallax")){
-              var maxH = contH > windowH ? contH : windowH;
-              remainingH = windowH - contH;
-          }
-          // set img values depending on cont
-          imgH = contH + remainingH + diff;
-          imgW = imgH * ratio;
-          // fix when too large
-          if(contW > imgW){
-              imgW = contW;
-              imgH = imgW / ratio;
-          }
-          //
-          path.data("resized-imgW", imgW);
-          path.data("resized-imgH", imgH);
-          path.css("background-size", imgW + "px " + imgH + "px");
-      });
-  }
-  $(window).resize(backgroundResize);
-  $(window).focus(backgroundResize);
-  backgroundResize();
-  
-  
-  
-  var my_image = new Image();
-
-//we will call this function when the image has finished loading
-function notify_complete()
-{
-   alert('The image has been loaded into the browser cache.');
+<style>
+html, body {
+    height: 100%;
+    overflow: hidden;
 }
 
-function load_image()
-{
-   // call the notify_complete function when the image has loaded
-   my_image.onload = notify_complete;
-
-   // load the image
-   my_image.src = 'bigearth.jpg';
+.background {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-position: 50% 50%\9 !important;
 }
-  });*/
-	</script>
-	
-	<style>
-		html, body {
-		    height: 100%;
-		    overflow: hidden;
-		}
-		
-		.background {
-		    background-repeat: no-repeat;
-		    /* custom background-position */
-		    background-position: 50% 50%;
-		    /* ie8- graceful degradation */
-		    background-position: 50% 50%\9 !important;
-		}
-		
-		.fullscreen {
-		    width: 100%;
-		    height: 100%;
-		    overflow: hidden;
-		}
-		
-		.fullscreen.overflow {
-		    height: auto;
-		    min-height: 100%;
-		}
-	</style>
-  
+
+.fullscreen {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fullscreen.overflow {
+    height: auto;
+    min-height: 100%;
+}
+</style>
+ 
 </head>
   
 <body ng-controller="mainCtrl">

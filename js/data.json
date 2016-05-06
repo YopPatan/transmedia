@@ -1,67 +1,118 @@
 [
     {
-        "pos_x": 0,
         "pos_y": 0,
-        "default_img": "http://cdn1.buuteeq.com/upload/21845/city-1.jpg.1920x1080_default.jpg",
-        "cards": [
-            {
-                "depth": 0,
-                "media": 0,
-                "type": 0
-            }
-        ]
-        
-    },
-    {
         "pos_x": 0,
-        "pos_y": -1,
-        "default_img": "http://www.fondos7.net/wallpaper-original/wallpapers/muelle-chile-3737.jpg",
-        "cards": [
+        "background_img": "http://cdn1.buuteeq.com/upload/21845/city-1.jpg.1920x1080_default.jpg",
+        "text": "Santiago",
+        "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "subcards": [
             {
-                "depth": 0,
-                "media": 0,
-                "type": 0
+                "depth": 1,
+                "text": "Las Condes",
+                "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "section": "comuna",
+                "background_img": "http://ibwall.com/wp-content/uploads/2015/12/santiago-chile-hd-las-condes-wititlereen-wallpaper.jpg"
+            },
+            {
+                "depth": 2,
+                "text": "Vista desde Costanera Center",
+                "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "section": "paisaje",
+                "background_img": "https://i.ytimg.com/vi/Sxdmf--OuqA/maxresdefault.jpg"
+            },
+            {
+                "depth": 3,
+                "background_img": "http://ibwall.com/wp-content/uploads/2015/12/santiago-chile-hd-las-condes-wititlereen-wallpaper.jpg",
+                "text": "Juventud y Escolares",
+                "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "section": "habitantes",
+                "background_img": "http://i.ytimg.com/vi/T3dq2Sy5n1Q/maxresdefault.jpg",
+                "background_video": "http://mdstrm.com/video/56c4b57d9de6a1d6082a62be.mp4"
             }
         ]
         
     },
     {
-        "pos_x": 0,
-        "pos_y": 1,
-        "default_img": "http://wallpaperstock.net/wallpapers/thumbs1/49313hd.jpg",
-        "cards": [
-            {
-                "depth": 0,
-                "media": 0,
-                "type": 0
-            }
-        ]
-        
-    },
-    {
+        "pos_y": 0,
         "pos_x": -1,
-        "pos_y": 0,
-        "default_img": "http://drwallpaper.com/wp-content/uploads/2016/03/chile_wallpaper_hd_background_download_desktop8.jpg",
-        "cards": [
+        "background_img": "http://drwallpaper.com/wp-content/uploads/2016/03/chile_wallpaper_hd_background_download_desktop8.jpg",
+        "background_video": "http://mdstrm.com/video/570508b4809467dd0826ce1e.mp4",
+        "text": "Isla de Pascua",
+        "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "subcards": [
             {
-                "depth": 0,
-                "media": 0,
-                "type": 0
+                "depth": 1,
+                "text": "Las Condes",
+                "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "section": "comuna",
+                "background_img": "http://ibwall.com/wp-content/uploads/2015/12/santiago-chile-hd-las-condes-wititlereen-wallpaper.jpg"
             }
         ]
         
     },
     {
-        "pos_x": 1,
         "pos_y": 0,
-        "default_img": "http://www.minimit.com/images/picjumbo.com_IMG_6648.jpg",
-        "cards": [
+        "pos_x": 1,
+        "background_img": "https://skichile123.files.wordpress.com/2014/09/farellones.jpg",
+        "text": "Farellones",
+        "subcards": [
             {
-                "depth": 0,
-                "media": 0,
-                "type": 0
+                "depth": 1,
+                "text": "Las Condes",
+                "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "section": "comuna",
+                "background_img": "http://ibwall.com/wp-content/uploads/2015/12/santiago-chile-hd-las-condes-wititlereen-wallpaper.jpg"
             }
         ]
+        
+    },
+    {
+        "pos_y": -1,
+        "pos_x": 0,
+        "background_img": "http://static.panoramio.com/photos/large/4768194.jpg",
+        "text": "Ovalle",
+        "subcards": []
+        
+    },
+    {
+        "pos_y": -1,
+        "pos_x": 1,
+        "background_img": "http://www.hostaldonderita.cl/wp-content/uploads/2014/05/1026-0303241327valle-elqui.jpg",
+        "text": "Valle del Elqui",
+        "cards": []
+        
+    },
+    {
+        "pos_y": -1,
+        "pos_x": -1,
+        "background_img": "http://1.bp.blogspot.com/-8jXxkpIpvRE/TgVQA2luLRI/AAAAAAAABFA/DLrCTO-6WKo/s1600/3.JPG",
+        "text": "La Serena",
+        "cards": []
+        
+    },
+    {
+        "pos_y": 1,
+        "pos_x": 0,
+        "background_img": "http://www.municipalidadchillan.cl/sitio/img/localidades/catedral/catedral-max1.jpg",
+        "text": "Chillan",
+        "cards": []
+        
+    },
+    {
+        "pos_y": 1,
+        "pos_x": -1,
+        "background_img": "http://www.ohmygeek.net/wp-content/uploads/2014/06/Concepcion.jpg",
+        "text": "Concepcion",
+        "cards": []
+        
+    },
+    {
+        "pos_y": 1,
+        "pos_x": 1,
+        "background_img": "http://3.bp.blogspot.com/__AuGc5g8rfw/TP7mWM62NYI/AAAAAAAAB7M/RjXIHiAegCs/s1600/CIMG0865.JPG",
+        "text": "Yungay",
+        "cards": []
         
     }
 ]
+

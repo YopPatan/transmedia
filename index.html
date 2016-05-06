@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html ng-app="transmedia">
 <head>
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<meta charset="utf-8">
 <title>Fullscreen backgrounds with centered content</title>
 <meta name="description" content="Fullscreen backgrounds with centered content">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
 
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
 
 <script src="js/app.js"></script>
 <script src="js/animations.js"></script>
 <script src="js/controllers.js"></script>
+<script src="js/filters.js"></script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
@@ -21,47 +23,199 @@ html, body {
     overflow: hidden;
 }
 
-.background {
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-position: 50% 50%\9 !important;
+.arrow-content {
+    z-index : 100; 
+    float:left; 
+    position: absolute; 
+}
+
+.arrow-content .arrow {
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 4px;
+}
+
+.controls {
+    z-index: 100; 
+    float: left; 
+    position: absolute; 
+    right: 0px; 
+    top: 0px; 
+    background: rgba(0, 0, 0, .5); 
+    border-radius: 4px;
+}
+
+.controls .controls-item {
+    text-align: center; 
+    margin: 10px;
+    color: #fff; 
+    font-size: 36px;
+}
+
+.controls .controls-nav {
+    text-align: center; 
+    margin: 10px;
+    color: #fff; 
+    font-size: 0px;
+}
+
+.controls .nav-point {
+    display: inline-block; 
+    border: solid 1px #fff; 
+    margin: 2px; 
+    width: 16px; 
+    height: 16px; 
+    border-radius: 4px;
+}
+
+.controls .nav-point div {
+    background-color: #fff; 
+    width: 100%; 
+    height: 100%;
+}
+
+.content {
+    float: left; 
+    position: absolute; 
+    top: 10%; 
+    left: 10%; 
+    right: 150px;
+}
+
+.content .content-title {
+    font-size: 64px; 
+    color: #fff;
+}
+
+.content .content-leadtext {
+    font-size: 24px; 
+    color: #fff;
 }
 
 .fullscreen {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    z-index: -100;
 }
-
+/*
 .fullscreen.overflow {
     height: auto;
     min-height: 100%;
 }
+*/
+.background-img {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-position: 50% 50%\9 !important;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+/*    width: 100%;
+    height: 100%;*/
+/*    min-width: 100%;
+    min-height: 100%;*/
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+}
+
+@media (min-aspect-ratio: 16/9) {
+	.background-video {
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media (max-aspect-ratio: 16/9) {
+	.background-video {
+		width: auto;
+		height: 100%;
+	}
+}
+
 </style>
  
 </head>
   
 <body ng-controller="mainCtrl">
 
-<div style="z-index :100; float:left; position: absolute; top: 50%; left: 10px; font-size: 32px;">
-    <a href="#" ng-click="changePosition(-1, 0);"><span class="glyphicon glyphicon-chevron-left">&nbsp;</span></a>
+<div class="arrow-content" ng-if="current_x > map.min_x" ng-click="changePosition(-1, 0);" style="top: calc(50% - 16px); left: 10px;">
+    <span class="glyphicon glyphicon-chevron-left arrow"></span>
 </div>
-<div style="z-index :100; float:right; position: absolute; top: 50%; right: 10px; font-size: 32px;">
-    <a href="#" ng-click="changePosition(1, 0);"><span class="glyphicon glyphicon-chevron-right">&nbsp;</span></a>
+<div class="arrow-content" ng-if="current_x < map.max_x" ng-click="changePosition(1, 0);" style="top: calc(50% - 16px); right: 10px;">
+    <span class="glyphicon glyphicon-chevron-right arrow"></span>
 </div>
-<div style="z-index :100; float:left; position: absolute; top: 10px; left: 50%; font-size: 32px;">
-    <a href="#" ng-click="changePosition(0, -1);"><span class="glyphicon glyphicon-chevron-up">&nbsp;</span></a>
+<div class="arrow-content" ng-if="current_y > map.min_y" ng-click="changePosition(0, -1);" style="top: 10px; left: calc(50% - 16px);">
+    <span class="glyphicon glyphicon-chevron-up arrow"></span>
 </div>
-<div style="z-index :100; float:left; position: absolute; bottom: 10px; left: 50%; font-size: 32px;">
-    <a href="#" ng-click="changePosition(0, 1);"><span class="glyphicon glyphicon-chevron-down">&nbsp;</span></a>
+<div class="arrow-content" ng-if="current_y < map.max_y" ng-click="changePosition(0, 1);" style="bottom: 10px; left: calc(50% - 16px);">
+    <span class="glyphicon glyphicon-chevron-down arrow"></span>
 </div>
 
-<div ng-repeat="card in cards" ng-show="card.pos_x==current_x && card.pos_y==current_y" class="fullscreen card-show" position-x="{{card.pos_x}}" position-y="{{card.pos_y}}">
-    <div class="fullscreen background" style="background-image:url('{{card.default_img}}');" data-img-width="1600" data-img-height="1064">
-        <div class="content">
-            Centered content
-        </div>
+<div class="controls">
+	<div class="controls-nav">
+		<div ng-repeat="idy in range(map.min_y, map.max_y)">
+		    <div class="nav-point" ng-repeat="idx in range(map.min_x,map.max_x)" ng-click="changePositionById(idx, idy);">
+		       <div ng-if="idy==current_y && idx==current_x"></div>
+		    </div>
+		</div>
+	</div>
+	<div class="controls-item" ng-click="changeDepth(1);">
+	   <span class="glyphicon glyphicon-plus"></span>
+	</div>
+    <div class="controls-item" ng-if="current_depth!=0" ng-click="changeDepth(-1);">
+       <span class="glyphicon glyphicon-minus" style="margin-left: -4px;"></span>
     </div>
+    <div class="controls-item">
+       <span class="glyphicon glyphicon-share"></span>
+    </div>
+</div>
+
+<!-- listado de tarjetones (wrap) -->
+<div class="fullscreen card-show" ng-repeat="card in cards" ng-show="card.pos_x==current_x && card.pos_y==current_y" position-x="{{card.pos_x}}" position-y="{{card.pos_y}}">
+
+    <!-- contenido profundidad 0 -->
+    <div class="fullscreen card-depth" ng-show="current_depth==0">
+	    <div class="fullscreen background-img" style="background-image: url('{{card.background_img}}');">
+	    </div>
+	    <div class="fullscreen" ng-if="card.background_video != null && card.pos_x == current_x && card.pos_y == current_y">
+		    <video class="background-video" loop muted autoplay poster="{{card.background_img}}">
+		        <source src="{{card.background_video | trustUrl}}" type="video/mp4">
+		    </video>
+		</div>
+		<div class="content">
+		    <span class="content-title">{{card.text}}</span><br>
+		    <span class="content-leadtext">{{card.leadtext}}</span>
+		</div>
+	</div>
+	
+	<!-- contenedor contenido con profundidad -->
+	<div class="card-depth-content" ng-if="card.pos_x == current_x && card.pos_y == current_y">
+        
+        <!-- listado de contenido profundidad x -->
+		<div class="fullscreen card-depth" ng-repeat="subcard in card.subcards" ng-show="subcard.depth == current_depth">
+	        <div class="fullscreen background-img" style="background-image: url('{{subcard.background_img}}');">
+	        </div>
+	        <div class="fullscreen" ng-if="subcard.background_video != null">
+	            <video class="background-video" loop muted autoplay poster="{{subcard.background_img}}">
+	                <source src="{{subcard.background_video | trustUrl}}" type="video/mp4">
+	            </video>
+	        </div>
+	        <div class="content">
+	            <span class="content-title">{{subcard.text}}</span><br>
+	            <span class="content-leadtext">{{subcard.leadtext}}</span>
+	        </div>
+		</div>
+	</div>
 </div>
 
 </body>

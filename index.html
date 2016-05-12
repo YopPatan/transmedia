@@ -9,10 +9,13 @@
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-touch.min.js"></script>
+<script src="js/angular-swipe.js"></script>
 
 <script src="js/app.js"></script>
 <script src="js/animations.js"></script>
 <script src="js/controllers.js"></script>
+<script src="js/directives.js"></script>
 <script src="js/filters.js"></script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -21,6 +24,7 @@
 html, body {
     height: 100%;
     overflow: hidden;
+    /*font-size: 85%;*/
 }
 
 .arrow-content {
@@ -80,18 +84,21 @@ html, body {
 .content {
     float: left; 
     position: absolute; 
-    top: 10%; 
-    left: 10%; 
-    right: 150px;
+    top: 70px; 
+    left: 70px; 
+    right: 90px;
+    bottom: 70px;
+/*    text-overflow: ellipsis;*/
+    overflow: hidden;
 }
 
 .content .content-title {
-    font-size: 64px; 
+    font-size: 4rem; 
     color: #fff;
 }
 
 .content .content-leadtext {
-    font-size: 24px; 
+    font-size: 1.5em; 
     color: #fff;
 }
 
@@ -148,17 +155,19 @@ html, body {
   
 <body ng-controller="mainCtrl">
 
-<div class="arrow-content" ng-if="current_x > map.min_x" ng-click="changePosition(-1, 0);" style="top: calc(50% - 16px); left: 10px;">
-    <span class="glyphicon glyphicon-chevron-left arrow"></span>
-</div>
-<div class="arrow-content" ng-if="current_x < map.max_x" ng-click="changePosition(1, 0);" style="top: calc(50% - 16px); right: 10px;">
-    <span class="glyphicon glyphicon-chevron-right arrow"></span>
-</div>
-<div class="arrow-content" ng-if="current_y > map.min_y" ng-click="changePosition(0, -1);" style="top: 10px; left: calc(50% - 16px);">
-    <span class="glyphicon glyphicon-chevron-up arrow"></span>
-</div>
-<div class="arrow-content" ng-if="current_y < map.max_y" ng-click="changePosition(0, 1);" style="bottom: 10px; left: calc(50% - 16px);">
-    <span class="glyphicon glyphicon-chevron-down arrow"></span>
+<div class="arrows">
+	<div class="arrow-content" ng-if="current_x > map.min_x" ng-click="changePosition(-1, 0);" style="top: calc(50% - 16px); left: 10px;">
+	    <span class="glyphicon glyphicon-chevron-left arrow"></span>
+	</div>
+	<div class="arrow-content" ng-if="current_x < map.max_x" ng-click="changePosition(1, 0);" style="top: calc(50% - 16px); right: 10px;">
+	    <span class="glyphicon glyphicon-chevron-right arrow"></span>
+	</div>
+	<div class="arrow-content" ng-if="current_y > map.min_y" ng-click="changePosition(0, -1);" style="top: 10px; left: calc(50% - 16px);">
+	    <span class="glyphicon glyphicon-chevron-up arrow"></span>
+	</div>
+	<div class="arrow-content" ng-if="current_y < map.max_y" ng-click="changePosition(0, 1);" style="bottom: 10px; left: calc(50% - 16px);">
+	    <span class="glyphicon glyphicon-chevron-down arrow"></span>
+	</div>
 </div>
 
 <div class="controls">
@@ -169,10 +178,10 @@ html, body {
 		    </div>
 		</div>
 	</div>
-	<div class="controls-item" ng-click="changeDepth(1);">
+	<div class="controls-item" ng-if="current_depth < max_depth" ng-click="changeDepth(1);">
 	   <span class="glyphicon glyphicon-plus"></span>
 	</div>
-    <div class="controls-item" ng-if="current_depth!=0" ng-click="changeDepth(-1);">
+    <div class="controls-item" ng-if="current_depth != 0" ng-click="changeDepth(-1);">
        <span class="glyphicon glyphicon-minus" style="margin-left: -4px;"></span>
     </div>
     <div class="controls-item">
@@ -180,42 +189,47 @@ html, body {
     </div>
 </div>
 
-<!-- listado de tarjetones (wrap) -->
-<div class="fullscreen card-show" ng-repeat="card in cards" ng-show="card.pos_x==current_x && card.pos_y==current_y" position-x="{{card.pos_x}}" position-y="{{card.pos_y}}">
+<div class="cards-content fullscreen" ng-swipe-up="changePosition(0, 1);" ng-swipe-down="changePosition(0, -1);" ng-swipe-left="changePosition(1, 0);" ng-swipe-right="changePosition(-1, 0);">
 
-    <!-- contenido profundidad 0 -->
-    <div class="fullscreen card-depth" ng-show="current_depth==0">
-	    <div class="fullscreen background-img" style="background-image: url('{{card.background_img}}');">
-	    </div>
-	    <div class="fullscreen" ng-if="card.background_video != null && card.pos_x == current_x && card.pos_y == current_y">
-		    <video class="background-video" loop muted autoplay poster="{{card.background_img}}">
-		        <source src="{{card.background_video | trustUrl}}" type="video/mp4">
-		    </video>
-		</div>
-		<div class="content">
-		    <span class="content-title">{{card.text}}</span><br>
-		    <span class="content-leadtext">{{card.leadtext}}</span>
-		</div>
-	</div>
+	<!-- listado de tarjetones (wrap) -->
+	<div class="fullscreen card-show" ng-repeat="card in cards" ng-show="card.pos_x==current_x && card.pos_y==current_y" position-x="{{card.pos_x}}" position-y="{{card.pos_y}}">
 	
-	<!-- contenedor contenido con profundidad -->
-	<div class="card-depth-content" ng-if="card.pos_x == current_x && card.pos_y == current_y">
-        
-        <!-- listado de contenido profundidad x -->
-		<div class="fullscreen card-depth" ng-repeat="subcard in card.subcards" ng-show="subcard.depth == current_depth">
-	        <div class="fullscreen background-img" style="background-image: url('{{subcard.background_img}}');">
-	        </div>
-	        <div class="fullscreen" ng-if="subcard.background_video != null">
-	            <video class="background-video" loop muted autoplay poster="{{subcard.background_img}}">
-	                <source src="{{subcard.background_video | trustUrl}}" type="video/mp4">
-	            </video>
-	        </div>
-	        <div class="content">
-	            <span class="content-title">{{subcard.text}}</span><br>
-	            <span class="content-leadtext">{{subcard.leadtext}}</span>
-	        </div>
+	    <!-- contenido profundidad 0 -->
+	    <div class="fullscreen card-depth" ng-show="current_depth==0">
+		    <div class="fullscreen background-img" style="background-image: url('{{card.background_img}}');">
+		    </div>
+		    <div class="fullscreen" ng-if="card.background_video != null && card.pos_x == current_x && card.pos_y == current_y">
+			    <video class="background-video" loop muted autoplay poster="{{card.background_img}}">
+			        <source src="{{card.background_video | trustUrl}}" type="video/mp4">
+			    </video>
+			</div>
+			<div class="content">
+			    <span class="content-title">{{card.text}}</span><br>
+			    <span class="content-leadtext">{{card.leadtext}}</span>
+			</div>
+		</div>
+		
+		<!-- contenedor contenido con profundidad -->
+		<div class="card-depth-content" ng-if="card.pos_x == current_x && card.pos_y == current_y">
+	        <setvalue data-element="max_depth" data-value="{{card.subcards.length}}"></setvalue>
+	        
+	        <!-- listado de contenido profundidad x -->
+			<div class="fullscreen card-depth" ng-repeat="subcard in card.subcards" ng-show="subcard.depth == current_depth">
+		        <div class="fullscreen background-img" style="background-image: url('{{subcard.background_img}}');">
+		        </div>
+		        <div class="fullscreen" ng-if="subcard.background_video != null">
+		            <video class="background-video" loop muted autoplay poster="{{subcard.background_img}}">
+		                <source src="{{subcard.background_video | trustUrl}}" type="video/mp4">
+		            </video>
+		        </div>
+		        <div class="content">
+		            <span class="content-title">{{subcard.text}}</span><br>
+		            <span class="content-leadtext">{{subcard.leadtext}}</span>
+		        </div>
+			</div>
 		</div>
 	</div>
+
 </div>
 
 </body>

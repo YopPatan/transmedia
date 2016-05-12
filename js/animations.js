@@ -2,7 +2,7 @@ transmedia.animation('.card-show', function() {
 
     var animateAdd = function(element, className, done) {
         var scope = angular.element(element).scope();
-        console.log(scope.event);
+        //console.log(scope.event);
         
         if (scope.event == 'up') {
             event_i = { top: parseInt(element.css('height'), 10) * -1, left: 0, opacity: 1 };
@@ -25,8 +25,6 @@ transmedia.animation('.card-show', function() {
             event_f = { left: 0, top: 0, opacity: 1 };
         }
         
-        console.log(event_f);
-        
         element.css({
             display : 'block',
             position : 'absolute'
@@ -40,7 +38,7 @@ transmedia.animation('.card-show', function() {
 
     var animateRemove = function(element, className, done) {
         var scope = angular.element(element).scope();
-        console.log(scope.event);
+        //console.log(scope.event);
 
         if (scope.event == 'up') {
             event_i = { top: 0, left: 0, opacity: 1 };

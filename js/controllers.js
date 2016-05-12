@@ -3,6 +3,7 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window) {
     $scope.current_x = 0;
     $scope.current_y = 0;
     $scope.current_depth = 0;
+    $scope.max_depth = 10;
     $scope.event;
     $scope.cards;
     $scope.map;
@@ -24,7 +25,13 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window) {
     });
     
     $scope.changePosition = function(offset_x, offset_y) {
-        //console.log("cambio");
+        if (($scope.current_x + offset_x) < $scope.map.min_x || ($scope.current_x + offset_x) > $scope.map.max_x) {
+            return;
+        }
+        if (($scope.current_y + offset_y) < $scope.map.min_y || ($scope.current_y + offset_y) > $scope.map.max_y) {
+            return;
+        }
+        
         if (offset_x == 0) {
             $scope.event = (offset_y > 0) ? 'down' : 'up';
         }
@@ -46,7 +53,6 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window) {
     }
     
     $scope.changeDepth = function(offset_depth) {
-        console.log("depth");
         $scope.current_depth = $scope.current_depth + offset_depth;
     }
     
@@ -58,13 +64,12 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window) {
     
     // cambio en el tamaño de la ventana
     angular.element($window).bind('resize', function() {
-        console.log('bind resize');
+        //console.log('bind resize');
         $scope.backgroundResize();
     });
     
     angular.element($window).bind("keydown", function (event) {
         $scope.$apply(function () {
-            console.log(event.keyCode);
             if (event.keyCode == 40 && $scope.current_y<$scope.map.max_y) {
                 $scope.changePosition(0, 1);
             }
@@ -77,10 +82,10 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window) {
             if (event.keyCode == 37 && $scope.current_x>$scope.map.min_x) {
                 $scope.changePosition(-1, 0);
             }
-            if (event.keyCode == 107) {
+            if (event.keyCode == 107 && $scope.current_depth < $scope.max_depth) {
                 $scope.changeDepth(1);
             }
-            if (event.keyCode == 109 && $scope.current_depth>0) {
+            if (event.keyCode == 109 && $scope.current_depth > 0) {
                 $scope.changeDepth(-1);
             }
         });
@@ -125,5 +130,18 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window) {
         }
         return input;
     };
+    
+    $scope.swipe = function() {
+        console.log("test");
+        $scope.changePosition(0, 1);
+    }
+    
+    this.setScope = function(element, value) {
+        $scope[element] = value;
+        //$scope['max_depth'] = 8;
+        //console.log($scope['max_depth']);
+    }
 
 });
+
+

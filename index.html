@@ -19,12 +19,37 @@
 <script src="js/filters.js"></script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://lipis.github.io/bootstrap-social/assets/css/font-awesome.css">
 
 <style>
 html, body {
     height: 100%;
     overflow: hidden;
     /*font-size: 85%;*/
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+  transition: all linear 0.3s;
+}
+
+.animate-show.ng-hide {
+  opacity: 0;
+}
+
+.menu {
+    position: absolute;
+    width: 100%;
+    background: rgba(0,0,0,0.2);
+    height: 50px;
+}
+
+.depth-bar {
+    position: absolute;
+    bottom: 0px;
+    float: left;
+    background: rgba(255,0,0,0.2);
+    height: 5px;
+    width: 100%;
 }
 
 .arrow-content {
@@ -47,9 +72,19 @@ html, body {
     float: left; 
     position: absolute; 
     right: 0px; 
-    top: 0px; 
+    top: 50px; 
     background: rgba(0, 0, 0, .5); 
-    border-radius: 4px;
+    border-radius: 0px 0px 6px 6px;
+}
+
+.controls .controls-selected {
+    position: absolute;
+    right: 0px;
+    background-color: rgba(255, 0, 0, 0.8);
+    padding: 5px 100px 0px 10px;
+    border-radius: 4px 0px 0px 4px;
+    white-space: nowrap; 
+    margin-top: -5px; 
 }
 
 .controls .controls-item {
@@ -57,6 +92,7 @@ html, body {
     margin: 10px;
     color: #fff; 
     font-size: 36px;
+    cursor: pointer;
 }
 
 .controls .controls-nav {
@@ -70,13 +106,13 @@ html, body {
     display: inline-block; 
     border: solid 1px #fff; 
     margin: 2px; 
-    width: 16px; 
-    height: 16px; 
+    width: 12px; 
+    height: 12px; 
     border-radius: 4px;
 }
 
 .controls .nav-point div {
-    background-color: #fff; 
+    background: #fff; 
     width: 100%; 
     height: 100%;
 }
@@ -155,14 +191,27 @@ html, body {
   
 <body ng-controller="mainCtrl">
 
-<div class="arrows">
+<div class="menu">
+    <div style="position: absolute; left: 18px; top: 6px; font-size: 32px; color: #fff;">
+       <span class="glyphicon glyphicon-menu-hamburger"></span>
+    </div>
+	<div style="position: absolute; right: 18px; top: 6px; font-size: 32px; color: #fff;" ng-click="hide_tools = (hide_tools) ? false : true">
+	   <span class="glyphicon glyphicon-cog"></span>
+	</div>
+	<div class="depth-bar">
+	    <div class="depth-bar-progress" style="width: {{getProgress();}}%; background: rgba(255,0,0,0.8); height: 100%;">
+	    </div>
+	</div>
+</div>
+
+<div class="arrows" ng-hide="hide_tools">
 	<div class="arrow-content" ng-if="current_x > map.min_x" ng-click="changePosition(-1, 0);" style="top: calc(50% - 16px); left: 10px;">
 	    <span class="glyphicon glyphicon-chevron-left arrow"></span>
 	</div>
 	<div class="arrow-content" ng-if="current_x < map.max_x" ng-click="changePosition(1, 0);" style="top: calc(50% - 16px); right: 10px;">
 	    <span class="glyphicon glyphicon-chevron-right arrow"></span>
 	</div>
-	<div class="arrow-content" ng-if="current_y > map.min_y" ng-click="changePosition(0, -1);" style="top: 10px; left: calc(50% - 16px);">
+	<div class="arrow-content" ng-if="current_y > map.min_y" ng-click="changePosition(0, -1);" style="top: 60px; left: calc(50% - 16px);">
 	    <span class="glyphicon glyphicon-chevron-up arrow"></span>
 	</div>
 	<div class="arrow-content" ng-if="current_y < map.max_y" ng-click="changePosition(0, 1);" style="bottom: 10px; left: calc(50% - 16px);">
@@ -170,7 +219,7 @@ html, body {
 	</div>
 </div>
 
-<div class="controls">
+<div class="controls" ng-hide="hide_tools">
 	<div class="controls-nav">
 		<div ng-repeat="idy in range(map.min_y, map.max_y)">
 		    <div class="nav-point" ng-repeat="idx in range(map.min_x,map.max_x)" ng-click="changePositionById(idx, idy);">
@@ -178,14 +227,32 @@ html, body {
 		    </div>
 		</div>
 	</div>
+	<!-- 
+    <div class="controls-item" ng-if="max_depth > 0">
+        <div class="controls-selected animate-show" ng-show="show_depth_menu">
+            <div ng-repeat="subcard in current_card.subcards" ng-click="changeDepthById(subcard.depth);" style="display: inline-block; width:60px;">
+                <span class="glyphicon {{subcard.section_icon}}"></span>
+            </div>
+        </div>
+        <span class="glyphicon glyphicon-heart" style="margin-left: -6px;" ng-click="show_depth_menu = (show_depth_menu) ? false : true"></span>
+    </div>
+     -->
 	<div class="controls-item" ng-if="current_depth < max_depth" ng-click="changeDepth(1);">
-	   <span class="glyphicon glyphicon-plus"></span>
+        <span class="glyphicon glyphicon-plus"></span>
 	</div>
     <div class="controls-item" ng-if="current_depth != 0" ng-click="changeDepth(-1);">
        <span class="glyphicon glyphicon-minus" style="margin-left: -4px;"></span>
     </div>
     <div class="controls-item">
-       <span class="glyphicon glyphicon-share"></span>
+        <div class="controls-selected animate-show" ng-show="show_social_menu">
+            <div style="display: inline-block; width:50px;">
+                <span class="fa fa-facebook"></span>
+            </div>
+            <div style="display: inline-block; width:50px;">
+                <span class="fa fa-twitter"></span>
+            </div>
+        </div>
+		<span class="glyphicon glyphicon-share" ng-click="show_social_menu = (show_social_menu) ? false : true"></span>
     </div>
 </div>
 

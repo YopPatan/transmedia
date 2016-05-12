@@ -11,6 +11,7 @@
                 "text": "Las Condes",
                 "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 "section": "comuna",
+                "section_icon": "glyphicon-apple",
                 "background_img": "http://ibwall.com/wp-content/uploads/2015/12/santiago-chile-hd-las-condes-wititlereen-wallpaper.jpg"
             },
             {
@@ -18,6 +19,7 @@
                 "text": "Vista desde Costanera Center",
                 "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 "section": "paisaje",
+                "section_icon": "glyphicon-user",
                 "background_img": "https://i.ytimg.com/vi/Sxdmf--OuqA/maxresdefault.jpg"
             },
             {
@@ -26,6 +28,7 @@
                 "text": "Juventud y Escolares",
                 "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 "section": "habitantes",
+                "section_icon": "glyphicon-cutlery",
                 "background_img": "http://i.ytimg.com/vi/T3dq2Sy5n1Q/maxresdefault.jpg",
                 "background_video": "http://mdstrm.com/video/56c4b57d9de6a1d6082a62be.mp4"
             }
@@ -45,6 +48,7 @@
                 "text": "Las Condes",
                 "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 "section": "comuna",
+                "section_icon": "glyphicon-home",
                 "background_img": "http://ibwall.com/wp-content/uploads/2015/12/santiago-chile-hd-las-condes-wititlereen-wallpaper.jpg"
             }
         ]
@@ -61,6 +65,7 @@
                 "text": "Las Condes",
                 "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 "section": "comuna",
+                "section_icon": "lyphicon-user",
                 "background_img": "http://ibwall.com/wp-content/uploads/2015/12/santiago-chile-hd-las-condes-wititlereen-wallpaper.jpg"
             }
         ]

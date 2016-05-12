@@ -1,1 +1,1 @@
-var transmedia = angular.module('transmedia', ['ngAnimate','ngTouch','swipe']);
+var transmedia = angular.module('transmedia', ['ngAnimate', 'ngTouch', 'swipe']);

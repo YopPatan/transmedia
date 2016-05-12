@@ -1,8 +1,9 @@
-transmedia.controller('mainCtrl', function ($scope, $http, $window) {
+transmedia.controller('mainCtrl', function ($scope, $http, $window, $filter) {
 
     $scope.current_x = 0;
     $scope.current_y = 0;
     $scope.current_depth = 0;
+    //$scope.current_card;
     $scope.max_depth = 10;
     $scope.event;
     $scope.cards;
@@ -18,6 +19,7 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window) {
             'min_y' :  Math.min.apply(Math, data.map(function(item) { return item.pos_y; })),
             'max_y' :  Math.max.apply(Math, data.map(function(item) { return item.pos_y; }))
         }
+        //$scope.changeCurrentCard();
         
     })
     .error(function(data, status, headers, config) {
@@ -42,6 +44,7 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window) {
         $scope.current_depth = 0;
         $scope.current_x = $scope.current_x + offset_x;
         $scope.current_y = $scope.current_y + offset_y;
+        //$scope.changeCurrentCard();
         //console.log($scope.current_x + " " + $scope.current_y);
     }
 
@@ -50,11 +53,16 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window) {
         $scope.current_x = pos_x;
         $scope.current_y = pos_y;
         $scope.current_depth = 0;
+        //$scope.changeCurrentCard();
     }
     
     $scope.changeDepth = function(offset_depth) {
         $scope.current_depth = $scope.current_depth + offset_depth;
     }
+    
+    /*$scope.changeDepthById = function(depth) {
+        $scope.current_depth = depth;
+    }*/
     
     // cambio en la pantalla
     $scope.$watch(function() {
@@ -135,6 +143,20 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window) {
         console.log("test");
         $scope.changePosition(0, 1);
     }
+    
+    $scope.getProgress = function() {
+        if ($scope.max_depth == null || $scope.max_depth == 0) {
+            return 0;
+        }
+        else {
+            return ((parseInt($scope.current_depth) + 0) * 100) / (parseInt($scope.max_depth) + 0);
+        }
+    }
+    
+/*    $scope.changeCurrentCard = function() {
+        $scope.current_card = $filter('filter')($scope.cards, {pos_y: $scope.current_y, pos_x: $scope.current_x})[0];
+        console.log($scope.current_card);
+    }*/
     
     this.setScope = function(element, value) {
         $scope[element] = value;

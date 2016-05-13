@@ -1,9 +1,8 @@
-transmedia.controller('mainCtrl', function ($scope, $http, $window, $filter) {
-
-    $scope.current_x = 0;
-    $scope.current_y = 0;
+transmedia.controller('mainCtrl', function ($scope, $http, $window, $routeParams) {
+    
+    $scope.current_x = ((isNaN($routeParams.pos_x) || $routeParams.pos_x === "") ? 0 : parseInt($routeParams.pos_x));
+    $scope.current_y = ((isNaN($routeParams.pos_y) || $routeParams.pos_y === "") ? 0 : parseInt($routeParams.pos_y));
     $scope.current_depth = 0;
-    //$scope.current_card;
     $scope.max_depth = 10;
     $scope.event;
     $scope.cards;
@@ -12,14 +11,20 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window, $filter) {
     $http.get('js/data.json')
     .success(function(data, status, headers, config) {
         //console.log(data);
-        $scope.cards = data;
+        $scope.cards = data.cards;
         $scope.map = {
-            'min_x' :  Math.min.apply(Math, data.map(function(item) { return item.pos_x; })),
-            'max_x' :  Math.max.apply(Math, data.map(function(item) { return item.pos_x; })),
-            'min_y' :  Math.min.apply(Math, data.map(function(item) { return item.pos_y; })),
-            'max_y' :  Math.max.apply(Math, data.map(function(item) { return item.pos_y; }))
+            'min_x' :  Math.min.apply(Math, $scope.cards.map(function(item) { return item.pos_x; })),
+            'max_x' :  Math.max.apply(Math, $scope.cards.map(function(item) { return item.pos_x; })),
+            'min_y' :  Math.min.apply(Math, $scope.cards.map(function(item) { return item.pos_y; })),
+            'max_y' :  Math.max.apply(Math, $scope.cards.map(function(item) { return item.pos_y; }))
         }
-        //$scope.changeCurrentCard();
+        
+        if ($scope.current_x > $scope.map.max_x || $scope.current_x < $scope.map.min_x) {
+            $scope.current_x = 0;
+        }
+        if ($scope.current_y > $scope.map.max_y || $scope.current_y < $scope.map.min_y) {
+            $scope.current_y = 0;
+        }
         
     })
     .error(function(data, status, headers, config) {
@@ -40,12 +45,9 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window, $filter) {
         else {
             $scope.event = (offset_x > 0) ? 'right' : 'left';
         }
-        //$scope.event = offset_x + ", " + offset_y;
         $scope.current_depth = 0;
         $scope.current_x = $scope.current_x + offset_x;
         $scope.current_y = $scope.current_y + offset_y;
-        //$scope.changeCurrentCard();
-        //console.log($scope.current_x + " " + $scope.current_y);
     }
 
     $scope.changePositionById = function(pos_x, pos_y) {
@@ -59,10 +61,6 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window, $filter) {
     $scope.changeDepth = function(offset_depth) {
         $scope.current_depth = $scope.current_depth + offset_depth;
     }
-    
-    /*$scope.changeDepthById = function(depth) {
-        $scope.current_depth = depth;
-    }*/
     
     // cambio en la pantalla
     $scope.$watch(function() {
@@ -153,16 +151,26 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window, $filter) {
         }
     }
     
-/*    $scope.changeCurrentCard = function() {
-        $scope.current_card = $filter('filter')($scope.cards, {pos_y: $scope.current_y, pos_x: $scope.current_x})[0];
-        console.log($scope.current_card);
-    }*/
-    
     this.setScope = function(element, value) {
         $scope[element] = value;
-        //$scope['max_depth'] = 8;
-        //console.log($scope['max_depth']);
     }
+
+});
+
+transmedia.controller('menuCtrl', function($scope, $http) {
+    
+    $scope.sections;
+    
+    $http.get('js/data.json')
+    .success(function(data, status, headers, config) {
+        //console.log(data);
+        $scope.sections = data.sections;
+    })
+    .error(function(data, status, headers, config) {
+        
+    });
+    
+    
 
 });
 

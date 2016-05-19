@@ -33,6 +33,11 @@ transmedia.animation('.card-show', function() {
         element.css(event_i);
         jQuery(element).animate(event_f, 500, done);
 
+        if (jQuery(element).find(".map").length > 0) {
+            var map = jQuery(element).find(".map").get(0);
+            google.maps.event.trigger(map, 'resize');
+        }
+
         return;
     }
 

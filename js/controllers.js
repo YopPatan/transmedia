@@ -75,6 +75,7 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window, $routeParams
     });
     
     angular.element($window).bind("keydown", function (event) {
+        console.log(event.keyCode);
         $scope.$apply(function () {
             if (event.keyCode == 40 && $scope.current_y<$scope.map.max_y) {
                 $scope.changePosition(0, 1);
@@ -88,11 +89,14 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window, $routeParams
             if (event.keyCode == 37 && $scope.current_x>$scope.map.min_x) {
                 $scope.changePosition(-1, 0);
             }
-            if (event.keyCode == 107 && $scope.current_depth < $scope.max_depth) {
+            if ((event.keyCode == 107 || event.keyCode == 187) && $scope.current_depth < $scope.max_depth) {
                 $scope.changeDepth(1);
             }
-            if (event.keyCode == 109 && $scope.current_depth > 0) {
+            if ((event.keyCode == 109 || event.keyCode == 189) && $scope.current_depth > 0) {
                 $scope.changeDepth(-1);
+            }
+            if (event.keyCode == 27) {
+                $scope.show_section = false;
             }
         });
     });
@@ -126,6 +130,27 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window, $routeParams
             var other = angular.element(value);
             other.css('background-size', imgW + 'px ' + imgH + 'px');
         });
+        
+        var row_tpl = angular.element('.row-tpl:visible');
+//        console.log(row_tpl.css('width'));
+        
+        
+        angular.forEach(angular.element('.col-tpl:visible'), function(value, key) {
+            var col_tpl = angular.element(value);
+//            other.css('background-size', imgW + 'px ' + imgH + 'px');
+            //console.log(key);
+            //console.log(col_tpl.css('width'));
+            if (col_tpl.css('width') === row_tpl.css('width')) {
+//                console.log("100%");
+                col_tpl.css('height', '50%');
+            }
+            else {
+//                console.log("50%");
+                col_tpl.css('height', '100%');
+            }
+        });
+        
+//        console.log("resize");
     }
     
     $scope.range = function(min, max, step) {
@@ -160,15 +185,38 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window, $routeParams
 transmedia.controller('menuCtrl', function($scope, $http) {
     
     $scope.sections;
+    $scope.cards;
+    $scope.show_section = 0;
     
     $http.get('js/data.json')
     .success(function(data, status, headers, config) {
         //console.log(data);
         $scope.sections = data.sections;
+        //$scope.cards = data.cards;
+        $scope.subcards = new Array();
+        angular.forEach(data.cards, function(cardv, cardk) {
+            angular.forEach(cardv.subcards, function(subcardv, subcardk) {
+                if ($scope.subcards[subcardv.section_id] === undefined) {
+                    $scope.subcards[subcardv.section_id] = new Array();
+                }
+                $scope.subcards[subcardv.section_id].push(subcardv);
+            });
+        });
+        //console.log($scope.subcards);
     })
     .error(function(data, status, headers, config) {
         
     });
+    
+    $scope.changeSection = function(section_id) {
+        if ($scope.show_section === section_id) {
+            $scope.show_section = 0;
+        }
+        else {
+            $scope.show_section = section_id;
+        }
+        console.log($scope.show_section);
+    }
     
     
 

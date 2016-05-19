@@ -1,10 +1,10 @@
 <div ng-controller="mainCtrl" class="fullscreen">
 
 <div class="menu">
-    <div style="position: absolute; left: 18px; top: 6px; font-size: 32px; color: #fff;">
-       <a href="#/menu"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+    <div style="position: absolute; left: 18px; top: 6px; font-size: 32px; color: #fff; z-index:100000;" ng-click="show_section = (show_section) ? false : true">
+       <span class="glyphicon glyphicon-menu-hamburger"></span>
     </div>
-	<div style="position: absolute; right: 18px; top: 6px; font-size: 32px; color: #fff;" ng-click="hide_tools = (hide_tools) ? false : true">
+	<div style="position: absolute; right: 18px; top: 6px; font-size: 32px; color: #fff;" ng-hide="show_section" ng-click="hide_tools = (hide_tools) ? false : true">
 	   <span class="glyphicon glyphicon-cog"></span>
 	</div>
 	<div class="depth-bar">
@@ -13,7 +13,9 @@
 	</div>
 </div>
 
-<div class="arrows animate-show" ng-hide="hide_tools">
+<div class="section-content animate-show" ng-include="'partials/menu.html'" ng-show="show_section"></div>
+
+<div class="arrows animate-show" ng-hide="hide_tools || show_section">
 	<div class="arrow-content" ng-if="current_x > map.min_x" ng-click="changePosition(-1, 0);" style="top: calc(50% - 16px); left: 10px;">
 	    <span class="glyphicon glyphicon-chevron-left arrow"></span>
 	</div>
@@ -28,7 +30,7 @@
 	</div>
 </div>
 
-<div class="controls animate-show" ng-hide="hide_tools">
+<div class="controls animate-show" ng-hide="hide_tools || show_section">
 	<div class="controls-nav">
 		<div ng-repeat="idy in range(map.min_y, map.max_y)">
 		    <div class="nav-point" ng-repeat="idx in range(map.min_x,map.max_x)" ng-click="changePositionById(idx, idy);">
@@ -55,7 +57,8 @@
     </div>
 </div>
 
-<div class="cards-content fullscreen" ng-swipe-up="changePosition(0, 1);" ng-swipe-down="changePosition(0, -1);" ng-swipe-left="changePosition(1, 0);" ng-swipe-right="changePosition(-1, 0);">
+<!-- <div class="cards-content fullscreen" ng-swipe-up="changePosition(0, 1);" ng-swipe-down="changePosition(0, -1);" ng-swipe-left="changePosition(1, 0);" ng-swipe-right="changePosition(-1, 0);"> -->
+<div class="cards-content fullscreen">
 
 	<!-- listado de tarjetones (wrap) -->
 	<div class="fullscreen card-show" ng-repeat="card in cards" ng-show="card.pos_x==current_x && card.pos_y==current_y" position-x="{{card.pos_x}}" position-y="{{card.pos_y}}">
@@ -69,10 +72,25 @@
 			        <source src="{{card.background_video | trustUrl}}" type="video/mp4">
 			    </video>
 			</div>
-			<div class="content">
-			    <span class="content-title">{{card.text}}</span><br>
-			    <span class="content-leadtext">{{card.leadtext}}</span>
+			<div class="content" ng-hide="show_section">
+                <div class="row row-tpl" style="height: 100%;">
+                    <div class="col-md-12 col-tpl">
+                       <div style="height: 100%;">
+                            <span class="content-title">{{card.text}}</span><br>
+                            <span class="content-leadtext">{{card.leadtext}}</span>
+                       </div>
+                    </div>
+                    <div class="col-md-12 col-tpl">
+                        <div style="border: 1px solid #fff; height: 100%;">
+                            <div ng-if="card.map" class="map" data-lat="{{card.map.latitude}}" data-lng="{{card.map.longitude}}" ng-hide="show_section"></div>
+                        </div>
+                    </div>
+                </div>
 			</div>
+			<div style="padding: 100px 60px 60px 60px;">
+
+			</div>
+			<!--  -->
 		</div>
 		
 		<!-- contenedor contenido con profundidad -->
@@ -88,7 +106,7 @@
 		                <source src="{{subcard.background_video | trustUrl}}" type="video/mp4">
 		            </video>
 		        </div>
-		        <div class="content">
+		        <div class="content" ng-hide="show_section">
 		            <span class="content-title">{{subcard.text}}</span><br>
 		            <span class="content-leadtext">{{subcard.leadtext}}</span>
 		        </div>

@@ -12,10 +12,10 @@ transmedia.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'partials/cards.html',
             controller: 'mainCtrl'
         })
-        .when('/menu', {
+/*        .when('/menu', {
             templateUrl: 'partials/menu.html',
             controller: 'menuCtrl'
-        })
+        })*/
         .otherwise({
            redirectTo: '/main' 
         });

@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "Lugar",
-            "icon": "glyphicon-apple"
+            "icon": "glyphicon-pushpin"
         },
         {
             "id": 2,
@@ -13,28 +13,32 @@
         {
             "id": 3,
             "name": "Personajes",
-            "icon": "glyphicon-apple"
+            "icon": "glyphicon-user"
         },
         {
             "id": 4,
             "name": "Tips",
-            "icon": "glyphicon-apple"
+            "icon": "glyphicon-scissors"
         },
         {
             "id": 5,
             "name": "Mi tesoro",
-            "icon": "glyphicon-apple"
+            "icon": "glyphicon-tag"
         },
         {
             "id": 6,
             "name": "Como llegar",
-            "icon": "glyphicon-apple"
+            "icon": "glyphicon-map-marker"
         }
     ], 
     "cards": [
         {
             "pos_y": 0,
             "pos_x": 0,
+            "map": {
+                "longitude": -70.632521,
+                "latitude": -33.4215949
+            },
             "background_img": "http://cdn1.buuteeq.com/upload/21845/city-1.jpg.1920x1080_default.jpg",
             "text": "Santiago",
             "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -50,12 +54,11 @@
                     "depth": 2,
                     "text": "Vista desde Costanera Center",
                     "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                    "section_id": 2,
+                    "section_id": 1,
                     "background_img": "https://i.ytimg.com/vi/Sxdmf--OuqA/maxresdefault.jpg"
                 },
                 {
                     "depth": 3,
-                    "background_img": "http://ibwall.com/wp-content/uploads/2015/12/santiago-chile-hd-las-condes-wititlereen-wallpaper.jpg",
                     "text": "Juventud y Escolares",
                     "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     "section_id": 3,
@@ -68,6 +71,10 @@
         {
             "pos_y": 0,
             "pos_x": -1,
+            "map": {
+                "longitude": -109.3853077,
+                "latitude": -27.0798562
+            },
             "background_img": "http://drwallpaper.com/wp-content/uploads/2016/03/chile_wallpaper_hd_background_download_desktop8.jpg",
             "background_video": "http://mdstrm.com/video/570508b4809467dd0826ce1e.mp4",
             "text": "Isla de Pascua",
@@ -86,12 +93,16 @@
         {
             "pos_y": 0,
             "pos_x": 1,
+            "map": {
+                "longitude": -70.2907463,
+                "latitude": -33.25069
+            },
             "background_img": "https://skichile123.files.wordpress.com/2014/09/farellones.jpg",
             "text": "Farellones",
             "subcards": [
                 {
                     "depth": 1,
-                    "text": "Las Condes",
+                    "text": "Nueva prueba",
                     "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     "section_id": 4,
                     "background_img": "http://ibwall.com/wp-content/uploads/2015/12/santiago-chile-hd-las-condes-wititlereen-wallpaper.jpg"
@@ -102,6 +113,10 @@
         {
             "pos_y": -1,
             "pos_x": 0,
+            "map": {
+                "longitude": -71.2618581,
+                "latitude": -30.5448676
+            },
             "background_img": "http://static.panoramio.com/photos/large/4768194.jpg",
             "text": "Ovalle",
             "subcards": []

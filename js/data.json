@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "Lugar",
-            "icon": "glyphicon-pushpin"
+            "icon": "glyphicon-apple"
         },
         {
             "id": 2,
@@ -13,153 +13,196 @@
         {
             "id": 3,
             "name": "Personajes",
-            "icon": "glyphicon-user"
+            "icon": "glyphicon-apple"
         },
         {
             "id": 4,
             "name": "Tips",
-            "icon": "glyphicon-scissors"
+            "icon": "glyphicon-apple"
         },
         {
             "id": 5,
             "name": "Mi tesoro",
-            "icon": "glyphicon-tag"
+            "icon": "glyphicon-apple"
         },
         {
             "id": 6,
             "name": "Como llegar",
-            "icon": "glyphicon-map-marker"
+            "icon": "glyphicon-apple"
         }
     ], 
     "cards": [
         {
             "pos_y": 0,
             "pos_x": 0,
-            "map": {
-                "longitude": -70.632521,
-                "latitude": -33.4215949
-            },
-            "background_img": "http://cdn1.buuteeq.com/upload/21845/city-1.jpg.1920x1080_default.jpg",
-            "text": "Santiago",
+            "background_video": "http://estaticos.tvn.cl/skins/transmedia/resource/video/intro.mp4",
+            "background_poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/programa_intro.jpg",
+            "text": "Descubriendo tesoros",
+            "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "subcards": []
+            
+        },
+        {
+            "pos_y": 0,
+            "pos_x": -1,
+            "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/herradura_chochas.jpg",
+            "text": "Chochas",
             "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             "subcards": [
                 {
                     "depth": 1,
-                    "text": "Las Condes",
+                    "text": "Ceviche",
                     "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     "section_id": 1,
-                    "background_img": "http://ibwall.com/wp-content/uploads/2015/12/santiago-chile-hd-las-condes-wititlereen-wallpaper.jpg"
+                    "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/herradura_ceviche.jpg"
+                }
+            ]
+            
+        },
+        {
+            "pos_y": 0,
+            "pos_x": 1,
+            "background_video": "http://estaticos.tvn.cl/skins/transmedia/resource/video/paihuano_v1.mp4",
+            "background_poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paihuano_leche.jpg",
+            "text": "Milagro blanco",
+            "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "subcards": [
+                {
+                    "depth": 1,
+                    "text": "Oro Blanco",
+                    "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "section_id": 1,
+                    "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paihuano_queso.jpg"
+                }
+            ]
+            
+        },
+        {
+            "pos_y": -1,
+            "pos_x": 0,
+            "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paine_choclo.jpg",
+            "text": "La comida de la felicidad",
+            "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "content": {
+                "class": "polaroids",
+                "position": "portrait",
+                "video": "img/paine_2.mp4",
+                "poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paine_choclo.jpg"
+            },
+            "subcards": [
+                {
+                    "depth": 1,
+                    "text": "Con o sin azúcar",
+                    "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "section_id": 1,
+                    "background_video": "http://estaticos.tvn.cl/skins/transmedia/resource/video/paine_v1.mp4",
+                    "background_poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paine_humita.jpg"
                 },
                 {
                     "depth": 2,
-                    "text": "Vista desde Costanera Center",
+                    "text": "Y como se preparan las humitas?",
                     "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     "section_id": 1,
-                    "background_img": "https://i.ytimg.com/vi/Sxdmf--OuqA/maxresdefault.jpg"
+                    "background_img": "img/paine_humita.jpg",
+                    "content": {
+                        "class": "paper",
+                        "position": "landscape",
+                        "html": "Receta para las Humitas <br><br><ul><li>Paso 1: Levantarse de la cama.</li><li>Paso 2: Buscar sencillo o ir a sacar plata al cajero.</li><li>Paso 3: Ir en busca del tipo que grita humitaaaaas en la calle.</li><li>Paso 4: Comprar humitas a gusto.</li></ul>"
+                    }
+
                 },
                 {
                     "depth": 3,
-                    "text": "Juventud y Escolares",
+                    "text": "Como llegar a Paine",
                     "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                    "section_id": 3,
-                    "background_img": "http://i.ytimg.com/vi/T3dq2Sy5n1Q/maxresdefault.jpg",
-                    "background_video": "http://mdstrm.com/video/56c4b57d9de6a1d6082a62be.mp4"
+                    "section_id": 1,
+                    "background_img": "img/carretera_paine.jpg",
+                    "content": {
+                        "position": "landscape",
+                        "img": "img/santiago_a_paine.png"
+                    }
                 }
+
             ]
             
         },
         {
-            "pos_y": 0,
-            "pos_x": -1,
-            "map": {
-                "longitude": -109.3853077,
-                "latitude": -27.0798562
-            },
-            "background_img": "http://drwallpaper.com/wp-content/uploads/2016/03/chile_wallpaper_hd_background_download_desktop8.jpg",
-            "background_video": "http://mdstrm.com/video/570508b4809467dd0826ce1e.mp4",
-            "text": "Isla de Pascua",
+            "pos_y": -1,
+            "pos_x": 1,
+            "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paihuano_copao.jpg",
+            "text": "EL descubrimiento de un tesoro",
             "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             "subcards": [
                 {
                     "depth": 1,
-                    "text": "Providencia",
+                    "text": "Copao Sour",
                     "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                    "section_id": 2,
-                    "background_img": "http://ibwall.com/wp-content/uploads/2015/12/santiago-chile-hd-las-condes-wititlereen-wallpaper.jpg"
+                    "section_id": 1,
+                    "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paihuano_jugo.jpg"
                 }
             ]
             
         },
         {
-            "pos_y": 0,
-            "pos_x": 1,
-            "map": {
-                "longitude": -70.2907463,
-                "latitude": -33.25069
-            },
-            "background_img": "https://skichile123.files.wordpress.com/2014/09/farellones.jpg",
-            "text": "Farellones",
+            "pos_y": -1,
+            "pos_x": -1,
+            "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/herradura_cascajo.jpg",
+            "text": "El Cascajo",
+            "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             "subcards": [
                 {
                     "depth": 1,
-                    "text": "Nueva prueba",
+                    "text": "Cascajo crujiente",
                     "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                    "section_id": 4,
-                    "background_img": "http://ibwall.com/wp-content/uploads/2015/12/santiago-chile-hd-las-condes-wititlereen-wallpaper.jpg"
+                    "section_id": 1,
+                    "background_video": "http://estaticos.tvn.cl/skins/transmedia/resource/video/herradura_v1.mp4",
+                    "background_poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/herradura_cascajo.jpg"
                 }
             ]
             
         },
         {
-            "pos_y": -1,
-            "pos_x": 0,
-            "map": {
-                "longitude": -71.2618581,
-                "latitude": -30.5448676
-            },
-            "background_img": "http://static.panoramio.com/photos/large/4768194.jpg",
-            "text": "Ovalle",
-            "subcards": []
-            
-        },
-        {
-            "pos_y": -1,
-            "pos_x": 1,
-            "background_img": "http://www.hostaldonderita.cl/wp-content/uploads/2014/05/1026-0303241327valle-elqui.jpg",
-            "text": "Valle del Elqui",
-            "subcards": []
-            
-        },
-        {
-            "pos_y": -1,
-            "pos_x": -1,
-            "background_img": "http://1.bp.blogspot.com/-8jXxkpIpvRE/TgVQA2luLRI/AAAAAAAABFA/DLrCTO-6WKo/s1600/3.JPG",
-            "text": "La Serena",
-            "subcards": []
-            
-        },
-        {
             "pos_y": 1,
             "pos_x": 0,
-            "background_img": "http://www.municipalidadchillan.cl/sitio/img/localidades/catedral/catedral-max1.jpg",
-            "text": "Chillan",
-            "subcards": []
+            "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paine_sandia.jpg",
+            "text": "Rojo que te enciendo rojo",
+            "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "subcards": [
+                {
+                    "depth": 1,
+                    "text": "Sonido perfecto",
+                    "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "section_id": 1,
+                    "background_video": "http://mdstrm.com/video/56c4b57d9de6a1d6082a62be.mp4",
+                    "background_poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paine_sandia.jpg"
+                }
+            ]
             
         },
         {
             "pos_y": 1,
             "pos_x": -1,
-            "background_img": "http://www.ohmygeek.net/wp-content/uploads/2014/06/Concepcion.jpg",
-            "text": "Concepcion",
+            "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/cahuil_sal.jpg",
+            "text": "Sal, tu substancia ágil",
+            "leadtext": "...Polvo del mar, la lengua de ti recibe un beso de la noche marina: el gusto funde en cada sazonado manjar tu oceanía y así la mínima, la minúscula ola del salero nos enseñano sólo su doméstica blancura,sino el sabor central del infinito... Pablo Neruda",
             "subcards": []
             
         },
         {
             "pos_y": 1,
             "pos_x": 1,
-            "background_img": "http://3.bp.blogspot.com/__AuGc5g8rfw/TP7mWM62NYI/AAAAAAAAB7M/RjXIHiAegCs/s1600/CIMG0865.JPG",
-            "text": "Yungay",
-            "subcards": []
+            "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/cahuil_planta.jpg",
+            "text": "El Alimento del futuro",
+            "subcards": [
+                 {
+                     "depth": 1,
+                     "text": "Semillas",
+                     "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                     "section_id": 1,
+                     "background_img": "img/cahuil_quinoa.jpg"
+                 }
+
+            ]
             
         }
     ]

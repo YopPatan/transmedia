@@ -1,0 +1,29 @@
+<div class="fullscreen background-img" ng-if="subcard.background_img" style="background-image: url('{{subcard.background_img}}');">
+</div>
+<div class="fullscreen" ng-if="subcard.background_video">
+    <video class="background-video" loop muted autoplay ng-attr-poster="{{subcard.background_poster}}">
+        <source ng-src="{{subcard.background_video | trustUrl}}" type="video/mp4">
+    </video>
+</div>
+<div class="content" ng-hide="show_section">
+    <div class="row row-tpl" ng-if="subcard.content">
+        <div class="col-tpl" ng-class="subcard.content.position === 'landscape' ? 'col-md-6' : 'col-md-12'">
+           <div>
+                <span class="content-title">{{subcard.text}}</span><br>
+                <span class="content-leadtext">{{subcard.leadtext}}</span>
+           </div>
+        </div>
+        <div class="col-tpl" ng-class="subcard.content.position === 'landscape' ? 'col-md-6' : 'col-md-12'">
+            <div ng-class="subcard.content.class" style="margin: 50px 8px 8px 8px;">
+                <img ng-if="subcard.content.img" width="100%" ng-src="{{subcard.content.img | trustUrl}}" />
+                <video ng-if="subcard.content.video" width="100%" ng-src="{{subcard.content.video | trustUrl}}" ng-attr-poster="{{subcard.content.poster}}" controls />
+                <div style="padding: 15px;" ng-if="subcard.content.html" ng-bind-html="subcard.content.html | trustHtml" width="100%"></div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!subcard.content">
+         <span class="content-title">{{subcard.text}}</span><br>
+         <span class="content-leadtext">{{subcard.leadtext}}</span>
+    </div>
+</div>
+

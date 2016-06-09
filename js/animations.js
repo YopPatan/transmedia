@@ -33,11 +33,6 @@ transmedia.animation('.card-show', function() {
         element.css(event_i);
         jQuery(element).animate(event_f, 500, done);
 
-        if (jQuery(element).find(".map").length > 0) {
-            var map = jQuery(element).find(".map").get(0);
-            google.maps.event.trigger(map, 'resize');
-        }
-
         return;
     }
 
@@ -86,6 +81,8 @@ transmedia.animation('.card-show', function() {
 transmedia.animation('.card-depth', function() {
 
     var animateAdd = function(element, className, done) {
+        var scope = angular.element(element).scope();
+        
         event_i = { left: 0, top: 0, opacity: 0 };
         event_f = { left: 0, top: 0, opacity: 1 };
         

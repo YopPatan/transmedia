@@ -12,7 +12,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-touch.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.min.js"></script>
 <script src="js/angular-swipe.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 
 <script src="js/app.js"></script>
 <script src="js/animations.js"></script>
@@ -20,53 +19,13 @@
 <script src="js/directives.js"></script>
 <script src="js/filters.js"></script>
 
-<script>
-    function initMap() {
-        console.log("maps");
-        $(".map").each(function(index, element) {
-            console.log("entro");
-//            var mapDiv = document.getElementById('map');
-//            var mapDiv = $(this).get(0);
-            console.log(element);
-            console.log(element.getAttribute('data-lat'));
-            var map = new google.maps.Map(element, {
-                center : {
-                    lat : parseFloat(element.getAttribute('data-lat')),
-                    lng : parseFloat(element.getAttribute('data-lng'))
-                },
-                zoom : 12
-            });
-        });
-        //MyMap.map.setCenter(new google.maps.LatLng( 45, 19 ) );
-    }
-</script>
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://lipis.github.io/bootstrap-social/assets/css/font-awesome.css">
 
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/custom.css">
+
 <style>
-
-html, body {
-    height: 100%;
-    overflow: hidden;
-}
-
-a, a:hover {
-    color: white;
-}
-
-.map {
-    width: 100%;
-    height: 100%;
-/*	min-width: 300px;
-	min-height: 200px;
-	position: absolute;
-	bottom: 50px;
-	right: 60px;*/
-/*	opacity: 0.6;*/
-/*    border: 8px solid #2b2b2b;
-    border-radius: 6px;*/
-}
 
 .animate-accordion.ng-hide-add, 
 .animate-accordion.ng-hide-remove {
@@ -85,208 +44,6 @@ a, a:hover {
 
 .animate-show.ng-hide {
     opacity: 0;
-}
-
-.menu {
-    position: absolute;
-    width: 100%;
-    background: rgba(0,0,0,0.2);
-    height: 50px;
-}
-
-/*.menu-red {
-    position: absolute;
-    width: 100%;
-    background: rgba(255,0,0,0.8);
-    height: 50px;
-}*/
-
-.section-content {
-    position: absolute;
-    top: 50px;
-    z-index: 150;
-    width: 100%;
-    background: #fff;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8);
-}
-
-.sections ul {
-    padding: 0px;
-}
-
-.sections li {
-    list-style-type: none;
-}
-
-/*.section-item {
-    list-style-type: none;
-}*/
-
-.section-item:focus,
-.section-item {
-    padding: 10px 20px 10px 20px;
-    width: 100%;
-    position: relative;
-    float: left;
-    color: #666;
-    font-size: 22px;
-    line-height: 28px;
-    text-decoration: none;
-    z-index: 100;
-}
-
-.section-item:hover {
-    background-color: #aaa;
-    text-decoration: none;
-    color: #fff;
-}
-
-.section-item.active {
-    background-color: red;
-    text-decoration: none;
-    color: #fff;
-}
-
-.section-cards {
-    position: relative;
-    float: left;
-    width: 100%;
-/*    padding: 0px;*/
-    padding: 10px 20px 10px 20px;
-}
-
-.depth-bar {
-    position: absolute;
-    bottom: 0px;
-    float: left;
-    background: rgba(255,0,0,0.2);
-    height: 5px;
-    width: 100%;
-}
-
-.arrow-content {
-    z-index : 100; 
-    float:left; 
-    position: absolute; 
-}
-
-.arrow-content .arrow {
-    font-size: 30px;
-    color: #fff;
-    cursor: pointer;
-    padding: 6px;
-    background: rgba(0, 0, 0, .5);
-    border-radius: 4px;
-}
-
-.controls {
-    z-index: 100; 
-    float: left; 
-    position: absolute; 
-    right: 0px; 
-    top: 50px; 
-    background: rgba(0, 0, 0, .5); 
-    border-radius: 0px 0px 6px 6px;
-}
-
-.controls .controls-selected {
-    position: absolute;
-    right: 0px;
-    background-color: rgba(255, 0, 0, 0.8);
-    padding: 5px 100px 0px 10px;
-    border-radius: 4px 0px 0px 4px;
-    white-space: nowrap; 
-    margin-top: -5px; 
-}
-
-.controls .controls-item {
-    text-align: center; 
-    margin: 6px;
-    color: #fff; 
-    font-size: 30px;
-    cursor: pointer;
-}
-
-.controls .controls-nav {
-    text-align: center; 
-    margin: 10px;
-    color: #fff; 
-    font-size: 0px;
-}
-
-.controls .nav-point {
-    display: inline-block; 
-    border: solid 1px #fff; 
-    margin: 2px; 
-    width: 12px; 
-    height: 12px; 
-    border-radius: 4px;
-}
-
-.controls .nav-point div {
-    background: #fff; 
-    width: 100%; 
-    height: 100%;
-}
-
-.content {
-    float: left; 
-    position: absolute; 
-    top: 100px; 
-    left: 60px; 
-    right: 70px;
-    bottom: 60px;
-/*    text-overflow: ellipsis;*/
-    overflow: hidden;
-}
-
-.content .content-title {
-    font-size: 4rem; 
-    color: #fff;
-}
-
-.content .content-leadtext {
-    font-size: 1.5em; 
-    color: #fff;
-}
-
-.fullscreen {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -100;
-}
-
-.background-img {
-    position: absolute;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-position: 50% 50%\9 !important;
-}
-
-.background-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-       -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-}
-
-@media (min-aspect-ratio: 16/9) {
-	.background-video {
-		width: 100%;
-		height: auto;
-	}
-}
-
-@media (max-aspect-ratio: 16/9) {
-	.background-video {
-		width: auto;
-		height: 100%;
-	}
 }
 
 </style>

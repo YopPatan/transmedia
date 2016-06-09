@@ -1,10 +1,15 @@
 <div ng-controller="mainCtrl" class="fullscreen">
 
+<circle r="4" cx="0" cy="0" fill="#FFFFFF" stroke="#FFFFFF" fill-opacity="1" stroke-width="2" stroke-opacity="0" cursor="pointer" transform="translate(886,18) scale(1)" aria-label=" Jan 01, 2004 3.3" class="amcharts-graph-bullet lastBullet"></circle>
+
 <div class="menu">
-    <div style="position: absolute; left: 18px; top: 6px; font-size: 32px; color: #fff; z-index:100000;" ng-click="show_section = (show_section) ? false : true">
+    <div style="position: absolute; left: 18px; top: 6px; font-size: 2.1em; color: #fff;" ng-click="show_section = (show_section) ? false : true">
        <span class="glyphicon glyphicon-menu-hamburger"></span>
     </div>
-	<div style="position: absolute; right: 18px; top: 6px; font-size: 32px; color: #fff;" ng-hide="show_section" ng-click="hide_tools = (hide_tools) ? false : true">
+    <div class="animate-show" style="position: absolute; left: 60px; top: 8px; font-size: 1.6em; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: calc(100% - 120px)" ng-show="current_depth>0">
+        {{cards[current_id].text}}
+    </div>
+	<div style="position: absolute; right: 18px; top: 6px; font-size: 2.1em; color: #fff;" ng-hide="show_section" ng-click="hide_tools = (hide_tools) ? false : true">
 	   <span class="glyphicon glyphicon-cog"></span>
 	</div>
 	<div class="depth-bar">
@@ -38,11 +43,23 @@
 		    </div>
 		</div>
 	</div>
-	<div class="controls-item" ng-if="current_depth < max_depth" ng-click="changeDepth(1);">
+	<div class="controls-item" ng-class="current_depth==max_depth ? 'disabled-control' : ''" ng-click="changeDepth(1);">
+        <svg ng-if="current_depth<max_depth && last_depth==false" class = "button" expanded = "true" height = "47px" width = "47px" style="position:absolute; margin-left: -9px; margin-top: -5px;">
+            <circle cx = "50%" cy = "50%" r = "0%" fill = "none" stroke = "red" stroke-width = "15%">
+              <animate attributeType="SVG" attributeName="r" begin="0s" dur="1s" repeatCount="indefinite" from="0%" to="42%"/>
+              <animate attributeType="CSS" attributeName="opacity" begin="0s"  dur="1s" repeatCount="indefinite" from="1" to="0.8"/>
+            </circle>
+        </svg>
         <span class="glyphicon glyphicon-plus"></span>
 	</div>
-    <div class="controls-item" ng-if="current_depth != 0" ng-click="changeDepth(-1);">
-       <span class="glyphicon glyphicon-minus" style="margin-left: -4px;"></span>
+    <div class="controls-item" ng-class="current_depth==0 ? 'disabled-control' : ''" ng-click="changeDepth(-1);">
+        <svg ng-if="current_depth>0 && last_depth==true" class = "button" expanded = "true" height = "47px" width = "47px" style="position:absolute; margin-left: -11px; margin-top: -5px;">
+            <circle cx = "50%" cy = "50%" r = "0%" fill = "none" stroke = "red" stroke-width = "15%">
+              <animate attributeType="SVG" attributeName="r" begin="0s" dur="1s" repeatCount="indefinite" from="0%" to="42%"/>
+               <animate attributeType="CSS" attributeName="opacity" begin="0s"  dur="1s" repeatCount="indefinite" from="1" to="0.8"/>
+            </circle>
+        </svg>
+        <span class="glyphicon glyphicon-minus" style="margin-left: -4px;"></span>
     </div>
     <div class="controls-item">
         <div class="controls-selected animate-show" ng-show="show_social_menu">
@@ -57,60 +74,21 @@
     </div>
 </div>
 
-<!-- <div class="cards-content fullscreen" ng-swipe-up="changePosition(0, 1);" ng-swipe-down="changePosition(0, -1);" ng-swipe-left="changePosition(1, 0);" ng-swipe-right="changePosition(-1, 0);"> -->
-<div class="cards-content fullscreen">
+<div class="cards-content fullscreen" ng-swipe-up="changePosition(0, 1);" ng-swipe-down="changePosition(0, -1);" ng-swipe-left="changePosition(1, 0);" ng-swipe-right="changePosition(-1, 0);">
 
 	<!-- listado de tarjetones (wrap) -->
-	<div class="fullscreen card-show" ng-repeat="card in cards" ng-show="card.pos_x==current_x && card.pos_y==current_y" position-x="{{card.pos_x}}" position-y="{{card.pos_y}}">
+	<div class="fullscreen card-show" ng-repeat="(key, card) in cards" ng-show="card.pos_x==current_x && card.pos_y==current_y" position-x="{{card.pos_x}}" position-y="{{card.pos_y}}">
+        <setvalue data-element="current_id" data-value="{{key}}" ng-if="card.pos_x == current_x && card.pos_y == current_y"></setvalue>
 	
 	    <!-- contenido profundidad 0 -->
-	    <div class="fullscreen card-depth" ng-show="current_depth==0">
-		    <div class="fullscreen background-img" style="background-image: url('{{card.background_img}}');">
-		    </div>
-		    <div class="fullscreen" ng-if="card.background_video != null && card.pos_x == current_x && card.pos_y == current_y">
-			    <video class="background-video" loop muted autoplay poster="{{card.background_img}}">
-			        <source src="{{card.background_video | trustUrl}}" type="video/mp4">
-			    </video>
-			</div>
-			<div class="content" ng-hide="show_section">
-                <div class="row row-tpl" style="height: 100%;">
-                    <div class="col-md-12 col-tpl">
-                       <div style="height: 100%;">
-                            <span class="content-title">{{card.text}}</span><br>
-                            <span class="content-leadtext">{{card.leadtext}}</span>
-                       </div>
-                    </div>
-                    <div class="col-md-12 col-tpl">
-                        <div style="border: 1px solid #fff; height: 100%;">
-                            <div ng-if="card.map" class="map" data-lat="{{card.map.latitude}}" data-lng="{{card.map.longitude}}" ng-hide="show_section"></div>
-                        </div>
-                    </div>
-                </div>
-			</div>
-			<div style="padding: 100px 60px 60px 60px;">
-
-			</div>
-			<!--  -->
-		</div>
+	    <div class="fullscreen card-depth" ng-show="current_depth==0" ng-include="'partials/content.html'" onload="subcard = card"></div>
 		
 		<!-- contenedor contenido con profundidad -->
 		<div class="card-depth-content" ng-if="card.pos_x == current_x && card.pos_y == current_y">
 	        <setvalue data-element="max_depth" data-value="{{card.subcards.length}}"></setvalue>
 	        
 	        <!-- listado de contenido profundidad x -->
-			<div class="fullscreen card-depth" ng-repeat="subcard in card.subcards" ng-show="subcard.depth == current_depth">
-		        <div class="fullscreen background-img" style="background-image: url('{{subcard.background_img}}');">
-		        </div>
-		        <div class="fullscreen" ng-if="subcard.background_video != null">
-		            <video class="background-video" loop muted autoplay poster="{{subcard.background_img}}">
-		                <source src="{{subcard.background_video | trustUrl}}" type="video/mp4">
-		            </video>
-		        </div>
-		        <div class="content" ng-hide="show_section">
-		            <span class="content-title">{{subcard.text}}</span><br>
-		            <span class="content-leadtext">{{subcard.leadtext}}</span>
-		        </div>
-			</div>
+			<div class="fullscreen card-depth" ng-repeat="subcard in card.subcards" ng-show="subcard.depth == current_depth" ng-include="'partials/content.html'"></div>
 		</div>
 	</div>
 

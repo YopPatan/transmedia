@@ -3,13 +3,13 @@
 <circle r="4" cx="0" cy="0" fill="#FFFFFF" stroke="#FFFFFF" fill-opacity="1" stroke-width="2" stroke-opacity="0" cursor="pointer" transform="translate(886,18) scale(1)" aria-label=" Jan 01, 2004 3.3" class="amcharts-graph-bullet lastBullet"></circle>
 
 <div class="menu">
-    <div style="position: absolute; left: 18px; top: 6px; font-size: 2.1em; color: #fff;" ng-click="show_section = (show_section) ? false : true">
+    <div class="menu-burger" ng-click="show_section = (show_section) ? false : true">
        <span class="glyphicon glyphicon-menu-hamburger"></span>
     </div>
-    <div class="animate-show" style="position: absolute; left: 60px; top: 8px; font-size: 1.6em; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: calc(100% - 120px)" ng-show="current_depth>0">
-        {{cards[current_id].text}}
+    <div class="menu-title animate-show" ng-show="current_depth>0">
+        {{cards[current_id].title}}
     </div>
-	<div style="position: absolute; right: 18px; top: 6px; font-size: 2.1em; color: #fff;" ng-hide="show_section" ng-click="hide_tools = (hide_tools) ? false : true">
+	<div class="menu-tool" ng-hide="show_section" ng-click="hide_tools = (hide_tools) ? false : true">
 	   <span class="glyphicon glyphicon-cog"></span>
 	</div>
 	<div class="depth-bar">
@@ -21,17 +21,17 @@
 <div class="section-content animate-show" ng-include="'partials/menu.html'" ng-show="show_section"></div>
 
 <div class="arrows animate-show" ng-hide="hide_tools || show_section">
-	<div class="arrow-content" ng-if="current_x > map.min_x" ng-click="changePosition(-1, 0);" style="top: calc(50% - 16px); left: 10px;">
-	    <span class="glyphicon glyphicon-chevron-left arrow"></span>
+	<div class="arrow arrow-left" ng-if="current_x > map.min_x" ng-click="changePosition(-1, 0);">
+	    <span class="glyphicon glyphicon-chevron-left"></span>
 	</div>
-	<div class="arrow-content" ng-if="current_x < map.max_x" ng-click="changePosition(1, 0);" style="top: calc(50% - 16px); right: 10px;">
-	    <span class="glyphicon glyphicon-chevron-right arrow"></span>
+	<div class="arrow arrow-right" ng-if="current_x < map.max_x" ng-click="changePosition(1, 0);">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
 	</div>
-	<div class="arrow-content" ng-if="current_y > map.min_y" ng-click="changePosition(0, -1);" style="top: 60px; left: calc(50% - 16px);">
-	    <span class="glyphicon glyphicon-chevron-up arrow"></span>
+	<div class="arrow arrow-top" ng-if="current_y > map.min_y" ng-click="changePosition(0, -1);">
+	    <span class="glyphicon glyphicon-chevron-up"></span>
 	</div>
-	<div class="arrow-content" ng-if="current_y < map.max_y" ng-click="changePosition(0, 1);" style="bottom: 10px; left: calc(50% - 16px);">
-	    <span class="glyphicon glyphicon-chevron-down arrow"></span>
+	<div class="arrow arrow-bottom" ng-if="current_y < map.max_y" ng-click="changePosition(0, 1);">
+	    <span class="glyphicon glyphicon-chevron-down"></span>
 	</div>
 </div>
 
@@ -44,7 +44,7 @@
 		</div>
 	</div>
 	<div class="controls-item" ng-class="current_depth==max_depth ? 'disabled-control' : ''" ng-click="changeDepth(1);">
-        <svg ng-if="current_depth<max_depth && last_depth==false" class = "button" expanded = "true" height = "47px" width = "47px" style="position:absolute; margin-left: -9px; margin-top: -5px;">
+        <svg ng-if="current_depth<max_depth && last_depth==false" class="pulso-plus" expanded="true" height="47px" width="47px">
             <circle cx = "50%" cy = "50%" r = "0%" fill = "none" stroke = "red" stroke-width = "15%">
               <animate attributeType="SVG" attributeName="r" begin="0s" dur="1s" repeatCount="indefinite" from="0%" to="42%"/>
               <animate attributeType="CSS" attributeName="opacity" begin="0s"  dur="1s" repeatCount="indefinite" from="1" to="0.8"/>
@@ -53,20 +53,20 @@
         <span class="glyphicon glyphicon-plus"></span>
 	</div>
     <div class="controls-item" ng-class="current_depth==0 ? 'disabled-control' : ''" ng-click="changeDepth(-1);">
-        <svg ng-if="current_depth>0 && last_depth==true" class = "button" expanded = "true" height = "47px" width = "47px" style="position:absolute; margin-left: -11px; margin-top: -5px;">
+        <svg ng-if="current_depth>0 && last_depth==true" class="pulso-minus" expanded="true" height="47px" width="47px">
             <circle cx = "50%" cy = "50%" r = "0%" fill = "none" stroke = "red" stroke-width = "15%">
               <animate attributeType="SVG" attributeName="r" begin="0s" dur="1s" repeatCount="indefinite" from="0%" to="42%"/>
-               <animate attributeType="CSS" attributeName="opacity" begin="0s"  dur="1s" repeatCount="indefinite" from="1" to="0.8"/>
+              <animate attributeType="CSS" attributeName="opacity" begin="0s"  dur="1s" repeatCount="indefinite" from="1" to="0.8"/>
             </circle>
         </svg>
         <span class="glyphicon glyphicon-minus" style="margin-left: -4px;"></span>
     </div>
     <div class="controls-item">
         <div class="controls-selected animate-show" ng-show="show_social_menu">
-            <div style="display: inline-block; width:50px;">
+            <div class="controls-selected-item">
                 <span class="fa fa-facebook"></span>
             </div>
-            <div style="display: inline-block; width:50px;">
+            <div class="controls-selected-item">
                 <span class="fa fa-twitter"></span>
             </div>
         </div>

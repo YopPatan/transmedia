@@ -165,7 +165,7 @@ transmedia.controller('mainCtrl', function ($scope, $http, $window, $routeParams
         //console.log(element + " " + value);
         $scope[element] = value;
     }
-
+    
 });
 
 transmedia.controller('menuCtrl', function($scope, $http) {

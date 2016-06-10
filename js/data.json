@@ -37,8 +37,12 @@
             "pos_x": 0,
             "background_video": "http://estaticos.tvn.cl/skins/transmedia/resource/video/intro.mp4",
             "background_poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/programa_intro.jpg",
-            "text": "Descubriendo tesoros",
-            "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "title": "Descubriendo tesoros",
+            "content": [
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
+            ],
             "subcards": []
             
         },
@@ -46,15 +50,23 @@
             "pos_y": 0,
             "pos_x": -1,
             "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/herradura_chochas.jpg",
-            "text": "Chochas",
-            "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "title": "Chochas",
+            "content": [
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
+            ],
             "subcards": [
                 {
                     "depth": 1,
-                    "text": "Ceviche",
-                    "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     "section_id": 1,
-                    "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/herradura_ceviche.jpg"
+                    "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/herradura_ceviche.jpg",
+                    "title": "Ceviche",
+                    "content": [
+                        {
+                            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        }
+                    ]
                 }
             ]
             
@@ -64,15 +76,23 @@
             "pos_x": 1,
             "background_video": "http://estaticos.tvn.cl/skins/transmedia/resource/video/paihuano_v1.mp4",
             "background_poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paihuano_leche.jpg",
-            "text": "Milagro blanco",
-            "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "title": "Milagro blanco",
+            "content": [
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
+            ],
             "subcards": [
                 {
                     "depth": 1,
-                    "text": "Oro Blanco",
-                    "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     "section_id": 1,
-                    "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paihuano_queso.jpg"
+                    "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paihuano_queso.jpg",
+                    "title": "Oro Blanco",
+                    "content": [
+                        {
+                            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        }
+                    ]
                 }
             ]
             
@@ -81,46 +101,62 @@
             "pos_y": -1,
             "pos_x": 0,
             "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paine_choclo.jpg",
-            "text": "La comida de la felicidad",
-            "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "content": {
-                "class": "polaroids",
-                "position": "portrait",
-                "video": "img/paine_2.mp4",
-                "poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paine_choclo.jpg"
-            },
+            "title": "La comida de la felicidad",
+            "position": "portrait",
+            "content": [
+                {
+                    "class": "polaroids",
+                    "video": "img/paine_2.mp4",
+                    "poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paine_choclo.jpg"
+                },
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
+            ],
             "subcards": [
                 {
                     "depth": 1,
-                    "text": "Con o sin azúcar",
-                    "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     "section_id": 1,
                     "background_video": "http://estaticos.tvn.cl/skins/transmedia/resource/video/paine_v1.mp4",
-                    "background_poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paine_humita.jpg"
+                    "background_poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paine_humita.jpg",
+                    "title": "Con o sin azúcar",
+                    "content": [
+                        {
+                            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        }
+                    ]
                 },
                 {
                     "depth": 2,
-                    "text": "Y como se preparan las humitas?",
-                    "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     "section_id": 1,
                     "background_img": "img/paine_humita.jpg",
-                    "content": {
-                        "class": "paper",
-                        "position": "landscape",
-                        "html": "Receta para las Humitas <br><br><ul><li>Paso 1: Levantarse de la cama.</li><li>Paso 2: Buscar sencillo o ir a sacar plata al cajero.</li><li>Paso 3: Ir en busca del tipo que grita humitaaaaas en la calle.</li><li>Paso 4: Comprar humitas a gusto.</li></ul>"
-                    }
-
+                    "title": "Y como se preparan las humitas?",
+                    "position": "landscape",
+                    "content": [
+                        {
+                            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        },
+                        {
+                            "class": "paper",
+                            "html": "Receta para las Humitas <br><br><ul><li>Paso 1: Levantarse de la cama.</li><li>Paso 2: Buscar sencillo o ir a sacar plata al cajero.</li><li>Paso 3: Ir en busca del tipo que grita humitaaaaas en la calle.</li><li>Paso 4: Comprar humitas a gusto.</li></ul>"
+                        }
+                    ]
                 },
                 {
                     "depth": 3,
-                    "text": "Como llegar a Paine",
-                    "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     "section_id": 1,
                     "background_img": "img/carretera_paine.jpg",
-                    "content": {
-                        "position": "landscape",
-                        "img": "img/santiago_a_paine.png"
-                    }
+                    "title": "Como llegar a Paine",
+                    "position": "landscape",
+                    "content": [
+                        {
+                            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        },
+                        {
+                            "img": "img/santiago_a_paine.png"
+                        }
+                    ]
+
                 }
 
             ]
@@ -130,15 +166,23 @@
             "pos_y": -1,
             "pos_x": 1,
             "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paihuano_copao.jpg",
-            "text": "EL descubrimiento de un tesoro",
-            "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "title": "EL descubrimiento de un tesoro",
+            "content": [
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
+            ],
             "subcards": [
                 {
                     "depth": 1,
-                    "text": "Copao Sour",
-                    "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     "section_id": 1,
-                    "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paihuano_jugo.jpg"
+                    "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paihuano_jugo.jpg",
+                    "title": "Copao Sour",
+                    "content": [
+                        {
+                            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        }
+                    ]
                 }
             ]
             
@@ -147,16 +191,24 @@
             "pos_y": -1,
             "pos_x": -1,
             "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/herradura_cascajo.jpg",
-            "text": "El Cascajo",
-            "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "title": "El Cascajo",
+            "content": [
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
+            ],
             "subcards": [
                 {
                     "depth": 1,
-                    "text": "Cascajo crujiente",
-                    "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     "section_id": 1,
                     "background_video": "http://estaticos.tvn.cl/skins/transmedia/resource/video/herradura_v1.mp4",
-                    "background_poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/herradura_cascajo.jpg"
+                    "background_poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/herradura_cascajo.jpg",
+                    "title": "Cascajo crujiente",
+                    "content": [
+                        {
+                            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        }
+                    ]
                 }
             ]
             
@@ -165,16 +217,24 @@
             "pos_y": 1,
             "pos_x": 0,
             "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paine_sandia.jpg",
-            "text": "Rojo que te enciendo rojo",
-            "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "title": "Rojo que te enciendo rojo",
+            "content": [
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
+            ],
             "subcards": [
                 {
                     "depth": 1,
-                    "text": "Sonido perfecto",
-                    "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     "section_id": 1,
                     "background_video": "http://mdstrm.com/video/56c4b57d9de6a1d6082a62be.mp4",
-                    "background_poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paine_sandia.jpg"
+                    "background_poster": "http://estaticos.tvn.cl/skins/transmedia/resource/img/paine_sandia.jpg",
+                    "title": "Sonido perfecto",
+                    "content": [
+                        {
+                            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        }
+                    ]
                 }
             ]
             
@@ -183,8 +243,12 @@
             "pos_y": 1,
             "pos_x": -1,
             "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/cahuil_sal.jpg",
-            "text": "Sal, tu substancia ágil",
-            "leadtext": "...Polvo del mar, la lengua de ti recibe un beso de la noche marina: el gusto funde en cada sazonado manjar tu oceanía y así la mínima, la minúscula ola del salero nos enseñano sólo su doméstica blancura,sino el sabor central del infinito... Pablo Neruda",
+            "title": "Sal, tu substancia ágil",
+            "content": [
+                {
+                    "text": "...Polvo del mar, la lengua de ti recibe un beso de la noche marina: el gusto funde en cada sazonado manjar tu oceanía y así la mínima, la minúscula ola del salero nos enseñano sólo su doméstica blancura,sino el sabor central del infinito... Pablo Neruda"
+                }
+            ],
             "subcards": []
             
         },
@@ -192,18 +256,25 @@
             "pos_y": 1,
             "pos_x": 1,
             "background_img": "http://estaticos.tvn.cl/skins/transmedia/resource/img/cahuil_planta.jpg",
-            "text": "El Alimento del futuro",
+            "title": "El Alimento del futuro",
+            "content": [
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
+            ],
             "subcards": [
                  {
                      "depth": 1,
-                     "text": "Semillas",
-                     "leadtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                      "section_id": 1,
-                     "background_img": "img/cahuil_quinoa.jpg"
+                     "background_img": "img/cahuil_quinoa.jpg",
+                     "title": "Semillas",
+                     "content": [
+                         {
+                             "text": "...Polvo del mar, la lengua de ti recibe un beso de la noche marina: el gusto funde en cada sazonado manjar tu oceanía y así la mínima, la minúscula ola del salero nos enseñano sólo su doméstica blancura,sino el sabor central del infinito... Pablo Neruda"
+                         }
+                     ]
                  }
-
             ]
-            
         }
     ]
 }

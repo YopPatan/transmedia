@@ -53,8 +53,8 @@
 
 .polaroids {
 	border: 10px solid #fff; 
-	margin: 50px auto auto auto !important;
-	width: 80%; 
+	margin: 3% auto 3% auto;
+	width: 90%; 
 	-webkit-transform: rotate(2deg);
 	-moz-transform: rotate(2deg); 
 	transform: rotate(2deg);
@@ -66,7 +66,7 @@
 }
 
 .polaroids:hover {
-	-webkit-transform: scale(1.25); 
-	-moz-transform: scale(1.25);
+	-webkit-transform: scale(1.1); 
+	-moz-transform: scale(1.1);
 	position: relative; z-index: 5;
 }

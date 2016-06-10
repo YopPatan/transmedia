@@ -8,23 +8,51 @@ a, a:hover {
     color: white;
 }
 
-.frame {
-    -webkit-box-shadow: 0 0 6px 4px white;
-    -moz-box-shadow: 0 0 6px 4px white;
-    box-shadow: 0 0 6px 4px white;
-    background-color: white;
-    color: #666;
-    font-size: 1.5em;
-}
-
+/* menu cabecera */
 .menu {
     position: absolute;
     width: 100%;
     background: rgba(0,0,0,0.2);
     height: 50px;
     z-index: 50;
+    font-size: 2.1em;
+    color: #fff;
 }
 
+.menu .menu-burger {
+	position: absolute;
+	left: 18px;
+	top: 6px; 
+}
+
+.menu .menu-tool {
+    position: absolute; 
+    right: 18px; 
+    top: 6px;
+}
+
+.menu .menu-title {
+	position: absolute; 
+	left: 60px; 
+	top: 4px; 
+/*	font-size: 1.6em !important;*/ 
+	white-space: nowrap; 
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	width: calc(100% - 120px)
+}
+
+.depth-bar {
+    position: absolute;
+    bottom: 0px;
+    float: left;
+    background: rgba(255,0,0,0.2);
+    height: 5px;
+    width: 100%;
+}
+
+
+/* contenido de menu, secciones */
 .section-content {
     position: absolute;
     top: 50px;
@@ -76,28 +104,55 @@ a, a:hover {
     padding: 10px 20px 10px 20px;
 }
 
-.depth-bar {
-    position: absolute;
-    bottom: 0px;
-    float: left;
-    background: rgba(255,0,0,0.2);
-    height: 5px;
-    width: 100%;
-}
-
-.arrow-content {
+/* contenido de tarjetones */
+.arrow {
     z-index : 100; 
     float:left; 
     position: absolute; 
 }
 
-.arrow-content .arrow {
-    font-size: 30px;
+.arrow span {
+    font-size: 2.1em;
     color: #fff;
     cursor: pointer;
     padding: 6px;
     background: rgba(0, 0, 0, .5);
-    border-radius: 4px;
+}
+
+.arrow-left {
+	top: calc(50% - 16px);
+	left: 0px;
+}
+
+.arrow-left span {
+    border-radius: 0px 4px 4px 0px;
+}
+
+.arrow-right {
+    top: calc(50% - 16px);
+    right: 0px;
+}
+
+.arrow-right span {
+    border-radius: 4px 0px 0px 4px;
+}
+
+.arrow-top {
+    top: 49px;
+    left: calc(50% - 16px);
+}
+
+.arrow-top span {
+    border-radius: 0px 0px 4px 4px;
+}
+
+.arrow-bottom {
+    bottom: 0px;
+    left: calc(50% - 16px);
+}
+
+.arrow-bottom span {
+    border-radius: 4px 4px 0px 0px;
 }
 
 .controls {
@@ -107,7 +162,7 @@ a, a:hover {
     right: 0px; 
     top: 50px; 
     background: rgba(0, 0, 0, .5); 
-    border-radius: 0px 0px 6px 6px;
+    border-radius: 0px 0px 0px 6px;
 }
 
 .controls .controls-selected {
@@ -120,11 +175,16 @@ a, a:hover {
     margin-top: -5px; 
 }
 
+.controls .controls-selected-item {
+    display: inline-block;
+    width: 50px;
+}
+
 .controls .controls-item {
     text-align: center; 
     margin: 6px;
     color: #fff; 
-    font-size: 30px;
+    font-size: 2.1em;
     cursor: pointer;
 }
 
@@ -150,23 +210,35 @@ a, a:hover {
     height: 100%;
 }
 
+.controls .pulso-plus {
+    position: absolute; 
+    margin-left: -9px; 
+    margin-top: -5px;
+}
+
+.controls .pulso-minus {
+	position:absolute;
+	margin-left: -11px;
+	margin-top: -5px;
+}
+
 .content {
     float: left; 
     position: absolute; 
-    top: 100px; 
+    top: 80px; 
     left: 60px; 
-    right: 70px;
+    right: 60px;
     bottom: 60px;
 /*    text-overflow: ellipsis;*/
     overflow: hidden;
 }
 
 .content .content-title {
-    font-size: 4rem; 
+    font-size: 3em; 
     color: #fff;
 }
 
-.content .content-leadtext {
+.content .content-text {
     font-size: 1.5em; 
     color: #fff;
 }
@@ -213,3 +285,86 @@ a, a:hover {
         height: 100%;
     }
 }
+
+@media (max-width: 768px) {
+	.menu {
+	   height: 40px;
+	   font-size: 1.6em;
+	}
+	
+	.menu .menu-burger {
+	   left: 10px;
+	}
+	
+	.menu .menu-tool {
+	   right: 12px;
+	}
+	
+	.menu .menu-title {
+	   left: 40px;
+	}
+	
+	.section-content {
+	   top: 40px;
+	}
+	
+	.controls {
+	   top: 40px;
+	}
+	
+	.arrow span {
+	   font-size: 1.6em;
+	}
+	
+	.arrow-top {
+	   top: 39px;
+	}
+	
+	.controls .controls-item {
+	   font-size: 1.6em;
+	}
+	
+	.controls .controls-selected {
+	   padding: 5px 70px 0px 10px;
+	}
+	
+	.controls .controls-selected-item {
+	   width: 30px;
+	}
+	
+	.controls .controls-nav {
+	   margin: 5px;
+	}
+	
+	.controls .nav-point {
+	    width: 8px; 
+	    height: 8px; 
+	    border-radius: 2px;
+	}
+	
+	.content {
+	    top: 60px; 
+	    left: 40px; 
+	    right: 40px;
+	    bottom: 40px;
+	}
+	
+	.content .content-title {
+	   font-size: 2.3em;
+	}
+	
+    .content .content-text {
+       font-size: 1.3em;
+    }
+    
+    .controls .pulso-plus {
+	    margin-left: -13px; 
+	    margin-top: -10px;
+    }
+    
+    .controls .pulso-minus {
+	    margin-left: -15px;
+	    margin-top: -10px;
+	}
+}
+

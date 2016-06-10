@@ -6,24 +6,18 @@
     </video>
 </div>
 <div class="content" ng-hide="show_section">
+    <div class="row row-tpl">
+        <div class="col-md-12 content-title">{{subcard.title}}</div>
+    </div>
     <div class="row row-tpl" ng-if="subcard.content">
-        <div class="col-tpl" ng-class="subcard.content.position === 'landscape' ? 'col-md-6' : 'col-md-12'">
-           <div>
-                <span class="content-title">{{subcard.text}}</span><br>
-                <span class="content-leadtext">{{subcard.leadtext}}</span>
-           </div>
-        </div>
-        <div class="col-tpl" ng-class="subcard.content.position === 'landscape' ? 'col-md-6' : 'col-md-12'">
-            <div ng-class="subcard.content.class" style="margin: 50px 8px 8px 8px;">
-                <img ng-if="subcard.content.img" width="100%" ng-src="{{subcard.content.img | trustUrl}}" />
-                <video ng-if="subcard.content.video" width="100%" ng-src="{{subcard.content.video | trustUrl}}" ng-attr-poster="{{subcard.content.poster}}" controls />
-                <div style="padding: 15px;" ng-if="subcard.content.html" ng-bind-html="subcard.content.html | trustHtml" width="100%"></div>
+        <div ng-repeat="content in subcard.content" ng-class="subcard.position === 'landscape' ? 'col-md-6' : 'col-md-12'">
+            <div ng-class="content.class">
+                <span ng-if="content.text" class="content-text">{{content.text}}</span>
+                <div ng-if="content.html" ng-bind-html="content.html | trustHtml" width="100%"></div>
+                <img ng-if="content.img" ng-src="{{content.img | trustUrl}}" width="100%"/>
+                <video ng-if="content.video" ng-src="{{content.video | trustUrl}}" ng-attr-poster="{{content.poster}}" controls width="100%"/>
             </div>
         </div>
-    </div>
-    <div ng-if="!subcard.content">
-         <span class="content-title">{{subcard.text}}</span><br>
-         <span class="content-leadtext">{{subcard.leadtext}}</span>
     </div>
 </div>
 
